@@ -1,0 +1,36 @@
+.navbar-div {
+}
+.main-div-navbar {
+  background-color: #171744;
+  color: whitesmoke;
+  font-family: Poppins;
+  font-size: large;
+  font-weight: 500;
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.float-div {
+  display: flex;
+  float: right;
+  color: whitesmoke;
+}
+.toggle-div {
+  color: whitesmoke;
+  font-size: large;
+  font-weight: 500;
+}
+@media (max-width: 700px) {
+  .float-div {
+    display: flex;
+    justify-content: center;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    align-items: center;
+    color: whitesmoke;
+  }
+}
