@@ -14,20 +14,38 @@
   margin-left: 75px;
   /* color: black; */
 }
-hr {
-  width: 90%;
-  display: flex;
+.hr {
+  width: 95%;
+  /* display: flex;
+  justify-self: center;
+  margin: auto;
   justify-content: center;
   align-items: center;
+  text-align: center; */
   margin-left: auto;
   margin-right: auto;
 }
+.card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
+}
+/* /// */
+.more-analysis {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  justify-content: center;
+  text-align: center;
+  color: blue;
+  align-items: center;
+  font-weight: 700;
+}
 @media (max-width: 700px) {
-  .display-div-more {
+  /* .display-div-more {
     display: grid;
     grid-template-columns: calc(2fr, 2);
     gap: 10px;
-
-    /* align-items: center; */
-  }
+  } */
 }

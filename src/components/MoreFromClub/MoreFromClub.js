@@ -6,12 +6,19 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 const MoreFromClub = () => {
   return (
-    <div style={{ width: "100%", background: "#D9D9D9", height: "auto" }}>
+    <div
+      style={{
+        width: "100%",
+        background: "#D9D9D9",
+        height: "auto",
+        marginTop: "40px",
+      }}
+    >
       <div>
         <div className="Div-h6-v" varian="h6">
           FROM THE CLUB
         </div>
-        <hr />
+        <hr className="hr" />
       </div>
       <Carousel>
         <div className="display-div-more">

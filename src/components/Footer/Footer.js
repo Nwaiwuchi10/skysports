@@ -1,17 +1,14 @@
 import React from "react";
 import Image from "react-bootstrap/esm/Image";
 import "./Footer.css";
+import nafas from "../../assets/images/nafas.png";
 
 const Footer = () => {
   return (
     <div className="Footer-main-div">
       <div className="footer-display">
         <div>
-          <Image
-            src="https://cdn.cdnlogo.com/logos/s/80/sky-sports-news.svg"
-            alt="gh"
-            style={{ width: "auto", height: "6vh", color: "whitesmoke" }}
-          />{" "}
+          <img src={nafas} alt="gh" className="img-footer-img" />{" "}
         </div>
         <div className="content-div">
           {" "}

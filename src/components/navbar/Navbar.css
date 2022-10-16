@@ -1,16 +1,28 @@
 .navbar-div {
+  width: auto;
+  height: auto;
 }
 .main-div-navbar {
   background-color: #171744;
+  /* background: rgb(8, 27, 75); */
   color: whitesmoke;
   font-family: Poppins;
   font-size: large;
   font-weight: 500;
-  position: static;
+  /* position: static; */
   display: flex;
   justify-content: center;
+
   align-items: center;
   text-align: center;
+}
+.nav-img-logo {
+  width: auto;
+  height: auto;
+  max-height: 8vh;
+
+  max-width: 250px;
+  vertical-align: top;
 }
 .float-div {
   display: flex;
@@ -22,15 +34,74 @@
   font-size: large;
   font-weight: 500;
 }
-@media (max-width: 700px) {
+@media (max-width: 1200px) {
   .float-div {
-    display: flex;
+    display: block;
     justify-content: center;
+    flex-direction: column;
     float: none;
+    right: 0px;
+    position: none;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     align-items: center;
     color: whitesmoke;
+  }
+  .nav-img-logo {
+    width: auto;
+    height: auto;
+    max-height: 8vh;
+
+    max-width: auto;
+    vertical-align: top;
+  }
+}
+
+@media (max-width: 920px) {
+  .float-div {
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+    float: none;
+    right: 0px;
+    position: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    align-items: center;
+    color: whitesmoke;
+  }
+  .nav-img-logo {
+    width: auto;
+    height: auto;
+    max-height: 8vh;
+
+    max-width: auto;
+    vertical-align: top;
+  }
+}
+
+@media (max-width: 700px) {
+  .float-div {
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+    float: none;
+    right: 0px;
+    position: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    align-items: center;
+    color: whitesmoke;
+  }
+  .nav-img-logo {
+    width: auto;
+    height: auto;
+    max-height: 8vh;
+
+    max-width: auto;
+    vertical-align: top;
   }
 }

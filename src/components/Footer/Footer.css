@@ -9,9 +9,15 @@
   align-items: center;
   text-align: center;
   line-height: 80px;
-  margin-left: 50px;
-  margin-right: 50px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
   color: white;
+}
+.img-footer-img {
+  height: auto;
+  width: auto;
+  max-height: 72px;
+  max-width: 250px;
 }
 .foot-policy {
   display: flex;
@@ -22,4 +28,27 @@
   font-size: medium;
 
   text-align: center;
+}
+@media (max-width: 760px) {
+  .footer-display {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 50px;
+    /* margin-left: 50px;
+    margin-right: 50px; */
+    color: white;
+  }
+  .content-div {
+    line-height: 25px;
+  }
+  .foot-policy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+  }
 }
