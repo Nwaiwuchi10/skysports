@@ -11,7 +11,7 @@ import CircularIndeterminate from "../components/Progress";
 import BasicExample from "../components/navbar/NavBar";
 import Footer from "../components/Footer/Footer";
 // toast.configure();
-const LoginScreen = () => {
+const AdminLogin = () => {
   const navigate = useNavigate();
   // const redirect = location.search ? location.search.split("=")[1] : "/";
 
@@ -84,8 +84,8 @@ const LoginScreen = () => {
           });
           {
             localStorage.getItem("isAdmin") === "true"
-              ? navigate("/Adminlogin")
-              : navigate("/");
+              ? navigate(`/admin/${localStorage.getItem("isAdmin")}`)
+              : navigate("/error/notAnAdmin");
           }
         } else {
           toast.error(res.data.error);
@@ -199,4 +199,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default AdminLogin;

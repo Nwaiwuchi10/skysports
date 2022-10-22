@@ -16,6 +16,8 @@ import aho from "../../assets/images/aho.jpg";
 import anfl from "../../assets/images/anfl.png";
 import joys from "../../assets/images/joys.jpg";
 import { Typewriter } from "react-simple-typewriter";
+import LiveGame from "../LiveGame/LiveGame";
+import GetLiveFixture from "../../pages/LiveFixture/GetLiveFixture";
 const Header = () => {
   const settings = {
     dots: true,
@@ -81,7 +83,7 @@ const Header = () => {
                 <Typography variant="body2" color="text.secondary">
                   <Typewriter
                     words={[
-                      " The Nigerian Institute of American Football (NAIF) is the governing body for international American football in Nigeria under the broader International Federation of American Football (IFAF) for Africa",
+                      " The Nigerian Institute of American Football (NAFA) is the governing body for international American football in Nigeria under the broader International Federation of American Football (NAFA) for Africa",
                     ]}
                     loop={3}
                     typeSpeed={70}
@@ -96,24 +98,27 @@ const Header = () => {
 
         <div className="card2">
           <Slide left>
-            <Card sx={{ maxWidth: 500 }}>
+            <Card sx={{ maxWidth: 700 }}>
               <CardActionArea>
-                <CardContent style={{ height: "30vh" }}>
+                <CardContent style={{ height: "auto" }}>
                   <Typography
-                    variant="body2"
+                    variant="h6"
                     color="text.secondary"
-                    style={{ marginBottom: "15px" }}
+                    style={{
+                      marginBottom: "15px",
+                      textAlign: "center",
+                      fontWeight: "600",
+                    }}
                   >
-                    Live Results
+                    Live Games
                   </Typography>
-                  <Typography gutterBottom variant="h5" component="div">
-                    This a Section for LiveGame Result
-                  </Typography>
+
                   <Typography variant="body2" color="text.secondary">
-                    The Nigerian Institute of American Football (NAIF) is the
+                    <GetLiveFixture />
+                    {/* The Nigerian Institute of American Football (NAIF) is the
                     governing body for international American football in
                     Nigeria under the broader International Federation of
-                    American Football (IFAF) for Africa.
+                    American Football (IFAF) for Africa. */}
                   </Typography>
                 </CardContent>
               </CardActionArea>

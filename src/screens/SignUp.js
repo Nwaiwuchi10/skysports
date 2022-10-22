@@ -159,7 +159,7 @@ const SignUp = () => {
                             type="password"
                             id="form2Example22"
                             className="form-control"
-                            value={confirmpassword}
+                            value={password}
                             onChange={(e) => setConfirmpassword(e.target.value)}
                           />
                           <label className="form-label" for="form2Example22">

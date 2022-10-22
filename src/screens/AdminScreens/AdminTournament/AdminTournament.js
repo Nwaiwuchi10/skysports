@@ -8,6 +8,7 @@ import Message from "../../../components/Message";
 import Loader from "../../../components/Loader";
 import { Link } from "react-router-dom";
 import BasicExample from "../../../components/navbar/NavBar";
+
 const AdminTournament = () => {
   const [user, setUser] = useState([]);
   const [news, setNews] = useState([]);
@@ -33,7 +34,6 @@ const AdminTournament = () => {
 
   return (
     <div>
-      <BasicExample />
       <h1 style={{ fontSize: "25px" }}>Tournament </h1>
 
       {loading ? (

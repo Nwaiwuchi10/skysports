@@ -53,13 +53,16 @@ function BasicExample() {
                   News
                 </Link>
               </Nav.Link>
-              <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
-                Scores
-              </Nav.Link>
+              {/* <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
+                <Link
+                  to="/livegames"
+                  style={{ textDecoration: "none", color: "whitesmoke" }}
+                >
+                  Scores
+                </Link>
+              </Nav.Link> */}
               <Nav.Link style={{ color: "whitesmoke" }}>Schedule</Nav.Link>
-              <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
-                Videos
-              </Nav.Link>
+              <Nav.Link style={{ color: "whitesmoke" }}>Videos</Nav.Link>
               <Nav.Link style={{ color: "whitesmoke" }}>
                 <Link
                   to="/teams"
@@ -90,7 +93,12 @@ function BasicExample() {
                   </Link>
                 </Nav.Link>
                 <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
-                  Games
+                  <Link
+                    to="/livegames"
+                    style={{ textDecoration: "none", color: "whitesmoke" }}
+                  >
+                    Scores
+                  </Link>
                 </Nav.Link>
                 <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
                   <Link
@@ -101,23 +109,8 @@ function BasicExample() {
                   </Link>
                 </Nav.Link>
 
-                {localStorage.getItem("isAdmin") === "true" ? (
-                  <Dropdown>
-                    <Dropdown.Toggle id="dropdown-basic">
-                      <Link
-                        to={`/admin/${localStorage.getItem("isAdmin")}`}
-                        style={{ textDecoration: "none" }}
-                      >
-                        {" "}
-                        {localStorage.getItem("username")}
-                      </Link>
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu>
-                      <Dropdown.Item onClick={logout}>Log OUt</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                ) : username ? (
+                {localStorage.getItem("isAdmin") ===
+                "true" ? null : username ? (
                   <Dropdown>
                     <Dropdown.Toggle id="dropdown-basic">
                       <div> {localStorage.getItem("username")}</div>

@@ -6,6 +6,7 @@ import Loader from "../../components/Loader";
 import Message from "../../components/Message";
 import axios from "axios";
 import { Col, Row } from "react-bootstrap";
+import Footer from "../../components/Footer/Footer";
 const Teams = () => {
   const [poster, setPoster] = useState([]);
   //   const [spanish, setSpanish] = useState([]);
@@ -46,7 +47,7 @@ const Teams = () => {
             <h6 className="Div-h6-v">Teams</h6>
             <hr className="hr" />
             {/* <Carousel> */}
-            <div>
+            <div style={{ marginBottom: "30px" }}>
               <TeamsDisplay poster={currentPosts} />
 
               <Pagination
@@ -61,6 +62,7 @@ const Teams = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

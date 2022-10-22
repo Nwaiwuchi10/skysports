@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import Footer from "../../components/Footer/Footer";
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
 const League = () => {
@@ -55,6 +56,7 @@ const League = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

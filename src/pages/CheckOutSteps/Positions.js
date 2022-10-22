@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import Footer from "../../components/Footer/Footer";
 import CheckOutSteps from "./CheckOutSteps";
 
 const Positions = () => {
@@ -237,6 +238,7 @@ const Positions = () => {
           </p>
         </div>
       </Container>
+      <Footer />
     </div>
   );
 };

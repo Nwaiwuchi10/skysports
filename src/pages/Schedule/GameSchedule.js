@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Nav } from "react-bootstrap";
+import Footer from "../../components/Footer/Footer";
 import BasicExample from "../../components/navbar/NavBar";
 import Standings from "../HomePage/Standings/Standings";
 import League from "../League/League";
@@ -22,6 +23,7 @@ const GameSchedule = () => {
         </div>
       </div>
       {act ? <Tournament /> : <League />}
+      <Footer />
     </div>
   );
 };

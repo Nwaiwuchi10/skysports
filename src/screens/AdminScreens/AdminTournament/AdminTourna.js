@@ -16,7 +16,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import "./AdminDashBoard.css";
+import "../AdminDashBoard.css";
 import { Card, CardActionArea, CardContent } from "@mui/material";
 import { Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -31,18 +31,18 @@ import {
 import { GiNewspaper, GiTeamUpgrade } from "react-icons/gi";
 import { RiTable2 } from "react-icons/ri";
 import { BsCameraVideo, BsFillImageFill } from "react-icons/bs";
-import nafas from "../../assets/images/nafas.png";
+import nafas from "../../../assets/images/nafas.png";
 import Collapsible from "react-collapsible";
 import { ImEnvelop, ImProfile } from "react-icons/im";
 import { FaUserTie } from "react-icons/fa";
 import { HiUserAdd } from "react-icons/hi";
 import { TbTournament } from "react-icons/tb";
 import { SiMajorleaguehacking } from "react-icons/si";
-import UserLIstScreen from "./AdminRoles/UserListScreen";
-import UserLIst2Screen from "./AdminRoles/UserList2Screen";
+
+import AdminTournament from "./AdminTournament";
 const drawerWidth = 240;
 
-function ResponsiveDrawer(props) {
+function AdminTourna(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -132,19 +132,19 @@ function ResponsiveDrawer(props) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="drop-d">
-                <Dropdown.Item>
+                <Dropdown.Item href="#/action-1">
                   {" "}
                   <Link to="/createRole" style={{ textDecoration: "none" }}>
                     Create UserRole
                   </Link>
                 </Dropdown.Item>
-                <Dropdown.Item>
+                <Dropdown.Item href="#/action-2">
                   {" "}
                   <Link to="/userRole" style={{ textDecoration: "none" }}>
                     Get Roles
                   </Link>
                 </Dropdown.Item>
-                <Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
                   {" "}
                   <Link to="/userRole" style={{ textDecoration: "none" }}>
                     Get User
@@ -170,18 +170,18 @@ function ResponsiveDrawer(props) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="drop-d">
-                <Dropdown.Item>
+                <Dropdown.Item href="#/action-1">
                   <Link to="/createPost" style={{ textDecoration: "none" }}>
                     Create News
                   </Link>
                 </Dropdown.Item>
-                <Dropdown.Item>
+                <Dropdown.Item href="#/action-2">
                   {" "}
                   <Link to="/newsPost" style={{ textDecoration: "none" }}>
                     Fetch News Post
                   </Link>
                 </Dropdown.Item>
-                <Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
                   {" "}
                   <Link to="/newscatcreate" style={{ textDecoration: "none" }}>
                     Set a News Category
@@ -232,7 +232,7 @@ function ResponsiveDrawer(props) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="drop-d">
-                <Dropdown.Item>
+                <Dropdown.Item href="#/action-1">
                   <Link to="/createLeague" style={{ textDecoration: "none" }}>
                     Create League
                   </Link>{" "}
@@ -262,30 +262,9 @@ function ResponsiveDrawer(props) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="drop-d">
-                <Dropdown.Item>
-                  {" "}
-                  <Link to="/postGame" style={{ textDecoration: "none" }}>
-                    Post Match Fixtures
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  {" "}
-                  <Link
-                    to="/getGameFixtures"
-                    style={{ textDecoration: "none" }}
-                  >
-                    Get Match fixtures
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  {" "}
-                  <Link
-                    to="/getGameFixtures"
-                    style={{ textDecoration: "none" }}
-                  >
-                    Update Match
-                  </Link>
-                </Dropdown.Item>
+                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </li>
@@ -329,12 +308,12 @@ function ResponsiveDrawer(props) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="drop-d">
-                <Dropdown.Item>
+                <Dropdown.Item href="#/action-1">
                   <Link to="/createTeam" style={{ textDecoration: "none" }}>
                     Create Teams
                   </Link>{" "}
                 </Dropdown.Item>
-                <Dropdown.Item>
+                <Dropdown.Item href="#/action-2">
                   <Link to="/getTeam" style={{ textDecoration: "none" }}>
                     Get Teams
                   </Link>{" "}
@@ -382,7 +361,7 @@ function ResponsiveDrawer(props) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="drop-d">
-                <Dropdown.Item>
+                <Dropdown.Item href="#/action-1">
                   <Link
                     to="/AdminImageGallery"
                     style={{ textDecoration: "none" }}
@@ -548,59 +527,16 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
+
         <Typography paragraph>
-          <div className="dashboard-display">
-            <div>
-              <div className="class-border">
-                <Typography gutterBottom variant="h5" component="div">
-                  <ImProfile style={{ fontSize: "40px" }} />
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Profile Menu
-                </Typography>
-              </div>
-            </div>
-            <div>
-              <div className="class-border">
-                <Typography gutterBottom variant="h5" component="div">
-                  <HiUserAdd style={{ fontSize: "40px" }} />
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Admin Profile
-                </Typography>
-              </div>
-            </div>
-            <div>
-              <div className="class-border">
-                <Typography gutterBottom variant="h5" component="div">
-                  <FaUserTie style={{ fontSize: "40px" }} />
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Administrator
-                </Typography>
-              </div>
-            </div>
-            <div>
-              <div className="class-border">
-                <Typography gutterBottom variant="h5" component="div">
-                  <ImEnvelop style={{ fontSize: "40px" }} />
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Messages
-                </Typography>
-              </div>
-            </div>
-          </div>
-        </Typography>
-        <Typography paragraph>
-          <UserLIst2Screen />
+          <AdminTournament />
         </Typography>
       </Box>
     </Box>
   );
 }
 
-ResponsiveDrawer.propTypes = {
+AdminTourna.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -608,4 +544,4 @@ ResponsiveDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default ResponsiveDrawer;
+export default AdminTourna;

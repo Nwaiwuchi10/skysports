@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Card, CardActionArea } from "@mui/material";
 import "./Modal.css";
 import Slide from "react-reveal/Slide";
+import UK from "../../assets/images/UK.png";
 import { Image } from "react-bootstrap";
 
 const Modal = () => {
@@ -34,22 +35,22 @@ const Modal = () => {
                 <strong> X </strong>
               </div>
               <div className="wrapper">
-                <Card sx={{ maxWidth: 800, background: "whitesmoke" }}>
-                  <CardActionArea>
-                    <Image
-                      style={{
-                        width: "80%",
-                        height: "20vh",
-                        display: "flex",
-                        marginRight: "auto",
-                        marginLeft: "auto",
-                        //   objectFit: "cover",
-                      }}
-                      src="https://static.www.nfl.com/league/apps/game-pass/NFL-WATCH-ON-GAME-PASS-UK.png"
-                      alt="nd"
-                    />
-                  </CardActionArea>
-                </Card>
+                {/* <Card sx={{ maxWidth: 800, background: "whitesmoke" }}>
+                  <CardActionArea> */}
+                <Image
+                  style={{
+                    width: "auto",
+                    height: "20vh",
+                    display: "flex",
+                    marginRight: "auto",
+                    marginLeft: "auto",
+                    //   objectFit: "cover",
+                  }}
+                  src={UK}
+                  alt="nd"
+                />
+                {/* </CardActionArea>
+                </Card> */}
               </div>
             </div>
           ) : (

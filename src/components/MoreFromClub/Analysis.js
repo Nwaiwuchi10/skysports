@@ -46,6 +46,16 @@ const Analysis = ({ spain }) => {
               </h6>{" "}
             </p>
             <p className="card-text">{spain?.desc}</p>
+            <p>
+              <h6
+                style={{
+                  color: "blue",
+                  fontFamily: "Poppins",
+                }}
+              >
+                Read More...
+              </h6>
+            </p>
           </div>
         </div>
 

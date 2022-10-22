@@ -10,6 +10,7 @@ import AdminCreatePost from "./screens/AdminScreens/AdminCreatePost";
 import AdminList from "./screens/AdminScreens/AdminList";
 import VideoUpload from "./screens/videos/VideoUpload";
 import PersistentDrawerLeft from "./screens/AdminScreens/AdminDashboard";
+// import PersistentDrawerLeft from "./screens/AdminScreens/AdminTournament/AdminTourna";
 import AdminCreateNewsCat from "./screens/AdminScreens/newsBlog/AdminCreateNewsCat";
 import CreateRoles from "./screens/AdminScreens/AdminRoles/CreateRoles";
 import UserLIstScreen from "./screens/AdminScreens/AdminRoles/UserListScreen";
@@ -31,6 +32,16 @@ import Positions from "./pages/CheckOutSteps/Positions";
 import Kicks from "./pages/CheckOutSteps/Kicks";
 import Fields from "./pages/CheckOutSteps/Fields";
 import { News } from "./pages/News/News";
+import AdminLogin from "./screens/AdminLogin";
+import AdminTourna from "./screens/AdminScreens/AdminTournament/AdminTourna";
+import AdminPostMatch from "./screens/AdminScreens/AdminMatch/AdminPostMatc";
+import CheckOutGame from "./screens/AdminScreens/AdminMatch/CheckOutGame";
+import AdminGetMatch from "./screens/AdminScreens/AdminMatch/AdminGetMatch";
+
+import LiveGame from "./components/LiveGame/LiveGame";
+import LivesGames from "./LiveGames/LivesGames";
+import AdminUpdateMatch from "./screens/AdminScreens/AdminMatch/AdminUpdateMatch";
+import ErrorNotAdmin from "./screens/ErrorNotAdmin";
 
 function App() {
   const Admin = localStorage.getItem("isAdmin") === "true";
@@ -42,12 +53,14 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginScreen />} />
+        <Route path="/Adminlogin" element={<AdminLogin />} />
+        <Route path="/error/notAnAdmin" element={<ErrorNotAdmin />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route
+        {/* <Route
           path="/admin/:id"
           element={Admin ? <PersistentDrawerLeft /> : <HomePage />}
-        />
-
+        /> */}
+        <Route path="/admin/:id" element={<PersistentDrawerLeft />} />
         <Route path="/createPost" element={<AdminCreatePost />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/leagues" element={<GameSchedule />} />
@@ -60,11 +73,15 @@ function App() {
         <Route path="/theGame" element={<TheGame />} />
         <Route path="/positions" element={<Positions />} />
         <Route path="/kicks" element={<Kicks />} />
+        <Route path="/postGame" element={<CheckOutGame />} />
         <Route path="/field" element={<Fields />} />
         <Route path="/createTeam" element={<AdminCreateTeams />} />
         <Route path="/createLeague" element={<AdminCreateLeague />} />
         <Route path="/getLeague" element={<AdminGetLeagues />} />
-        <Route path="/getTournament" element={<AdminTournament />} />
+        <Route path="/getGameFixtures" element={<AdminGetMatch />} />
+        {/* <Route path="/getTournament" element={<AdminTournament />} /> */}
+        <Route path="/getTournament" element={<AdminTourna />} />
+
         <Route path="/updatePost" element={<VideoUpload />} />
         <Route path="/newscatcreate" element={<AdminCreateNewsCat />} />
         <Route path="/createRole" element={<CreateRoles />} />
@@ -73,7 +90,9 @@ function App() {
         <Route path="/admin/user/:id/edit" element={<AssignRoles />} />
         <Route path="/newsDetails/:id" element={<NewsDetails />} />
         <Route path="/admin/user/:id/adminedit" element={<AssignAdmin />} />
+        <Route path="/admin/fixtures/:id/edit" element={<AdminUpdateMatch />} />
         <Route path="/AdminImageGallery" element={<AdminImageGallery />} />
+        <Route path="/livegames" element={<LivesGames />} />
       </Routes>
     </div>
   );

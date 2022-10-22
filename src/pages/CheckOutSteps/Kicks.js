@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import Footer from "../../components/Footer/Footer";
 import CheckOutSteps from "./CheckOutSteps";
 
 const Kicks = () => {
@@ -37,6 +38,7 @@ const Kicks = () => {
           </p>
         </div>
       </Container>
+      <Footer />
     </div>
   );
 };

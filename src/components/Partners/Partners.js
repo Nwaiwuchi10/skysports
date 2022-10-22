@@ -15,12 +15,12 @@ const Partners = () => {
   return (
     <div>
       {" "}
-      <h5
+      <h6
         className="text-center py-3"
         style={{ color: "blue", fontWeight: "600", marginTop: "20px" }}
       >
         OUR PARTNERS
-      </h5>
+      </h6>
       <div className="m-partners">
         <Marquee direction="left" pauseOnHover="true">
           <div className="img-wrap">

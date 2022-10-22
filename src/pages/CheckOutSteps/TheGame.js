@@ -1,12 +1,13 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { Typewriter } from "react-simple-typewriter";
+import Footer from "../../components/Footer/Footer";
 import BasicExample from "../../components/navbar/NavBar";
 import CheckOutSteps from "./CheckOutSteps";
 
 const TheGame = () => {
   return (
-    <div>
+    <div style={{ width: "100%", height: "100vh" }}>
       <div>
         <CheckOutSteps step1 step2 step3 step4 />
       </div>
@@ -250,6 +251,7 @@ const TheGame = () => {
           </ul>
         </div>
       </Container>
+      <Footer />
     </div>
   );
 };

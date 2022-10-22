@@ -23,6 +23,7 @@ import CardContent from "@mui/material/CardContent";
 import { CardActionArea } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import "../components/Partners/Partners.css";
+import Footer from "../components/Footer/Footer";
 const NewsDetails = () => {
   const { id } = useParams();
   const [details, setDetails] = useState({});
@@ -46,51 +47,52 @@ const NewsDetails = () => {
   }, [id]);
 
   return (
-    <div style={{ backgroundColor: "#D9D9D9", height: "100vh" }}>
+    <div style={{ width: "100%", height: "100vh" }}>
       <BasicExample />
-      <Container>
-        {/* <Meta title={product.name} /> */}
-        <Link className="btn btn-light my-3" to="/">
-          Go Back
-        </Link>
-        {loading ? (
-          <Loader />
-        ) : error ? (
-          <Message variant="danger">{error}</Message>
-        ) : (
-          <>
-            <Row>
-              <Col md={6}>
-                <Image src={details?.image} alt={details?.name} fluid />
-              </Col>
-              <Col md={6}>
-                <ListGroup variant="flush">
-                  <ListGroup.Item>
-                    <h3>
-                      <strong>{details?.caption}</strong>{" "}
-                    </h3>
-                  </ListGroup.Item>
-                  <ListGroup.Item>{details?.desc}</ListGroup.Item>
+      <div style={{ marginBottom: "40px" }}>
+        <Container>
+          {/* <Meta title={product.name} /> */}
+          <Link className="btn btn-light my-3" to="/">
+            Go Back
+          </Link>
+          {loading ? (
+            <Loader />
+          ) : error ? (
+            <Message variant="danger">{error}</Message>
+          ) : (
+            <>
+              <Row>
+                <Col md={6}>
+                  <Image src={details?.image} alt={details?.name} fluid />
+                </Col>
+                <Col md={6}>
+                  <ListGroup>
+                    <ListGroup.Item>
+                      <h3>
+                        <strong>{details?.caption}</strong>{" "}
+                      </h3>
+                    </ListGroup.Item>
+                    <ListGroup.Item>{details?.desc}</ListGroup.Item>
 
-                  <ListGroup.Item>
-                    <h5>
-                      <Typewriter
-                        className="type-words"
-                        words={[details?.content]}
-                        loop={5}
-                        typeSpeed={70}
-                        deleteSpeed={50}
-                        delaySpeed={1000}
-                      />
-                    </h5>
-                  </ListGroup.Item>
-                </ListGroup>
-              </Col>
-              {/* <Col md={3}>
+                    <ListGroup.Item>
+                      <h5>
+                        <Typewriter
+                          className="type-words"
+                          words={[details?.content]}
+                          loop={5}
+                          typeSpeed={70}
+                          deleteSpeed={50}
+                          delaySpeed={1000}
+                        />
+                      </h5>
+                    </ListGroup.Item>
+                  </ListGroup>
+                </Col>
+                {/* <Col md={3}>
          
             </Col> */}
-            </Row>
-            {/* <Card sx={{ maxWidth: 855 }}>
+              </Row>
+              {/* <Card sx={{ maxWidth: 855 }}>
               <Card.Body>
                 {" "}
                 <Typography
@@ -102,7 +104,7 @@ const NewsDetails = () => {
                 </Typography>
               </Card.Body>
             </Card> */}
-            {/* <Card sx={{ maxWidth: 855, maxHeight: 855 }}>
+              {/* <Card sx={{ maxWidth: 855, maxHeight: 855 }}>
               <CardActionArea>
                 <CardContent>
                   <Typewriter
@@ -116,15 +118,17 @@ const NewsDetails = () => {
                 </CardContent>
               </CardActionArea>
             </Card> */}
-            {/* <Row>
+              {/* <Row>
             <Col md={6}>
               <h2>Reviews</h2>
            
             </Col>
           </Row> */}
-          </>
-        )}
-      </Container>
+            </>
+          )}
+        </Container>
+      </div>
+      <Footer />
     </div>
   );
 };

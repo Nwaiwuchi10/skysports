@@ -42,6 +42,16 @@ const Latino = ({ poster }) => {
                   </h6>
                 </p>
                 <p className="card-text">{posty?.desc}</p>
+                <p>
+                  <h6
+                    style={{
+                      color: "blue",
+                      fontFamily: "Poppins",
+                    }}
+                  >
+                    Read More...
+                  </h6>
+                </p>
               </div>
             </div>
           </Col>
