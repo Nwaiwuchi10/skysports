@@ -81,7 +81,11 @@ const Header = () => {
                   AMERICAN FOOTBALL IN NIGERIA
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  <Typewriter
+                  The Nigerian Institute of American Football (NAFA) is the
+                  governing body for international American football in Nigeria
+                  under the broader International Federation of American
+                  Football (NAFA) for Africa
+                  {/* <Typewriter
                     words={[
                       " The Nigerian Institute of American Football (NAFA) is the governing body for international American football in Nigeria under the broader International Federation of American Football (NAFA) for Africa",
                     ]}
@@ -89,7 +93,7 @@ const Header = () => {
                     typeSpeed={70}
                     deleteSpeed={50}
                     delaySpeed={1000}
-                  />
+                  /> */}
                 </Typography>
               </CardContent>
             </CardActionArea>

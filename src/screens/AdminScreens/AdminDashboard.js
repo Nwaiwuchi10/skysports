@@ -28,7 +28,7 @@ import {
   MdSupervisedUserCircle,
   MdTour,
 } from "react-icons/md";
-import { GiNewspaper, GiTeamUpgrade } from "react-icons/gi";
+import { GiBabyfootPlayers, GiNewspaper, GiTeamUpgrade } from "react-icons/gi";
 import { RiTable2 } from "react-icons/ri";
 import { BsCameraVideo, BsFillImageFill } from "react-icons/bs";
 import nafas from "../../assets/images/nafas.png";
@@ -396,7 +396,7 @@ function ResponsiveDrawer(props) {
             </Dropdown>
           </li>
           <li style={{ display: "flex" }}>
-            <BsCameraVideo
+            <GiBabyfootPlayers
               style={{
                 fontSize: "25px",
                 marginTop: "auto",
@@ -408,13 +408,26 @@ function ResponsiveDrawer(props) {
                 id="dropdown-basic"
                 style={{ backgroundColor: "#171744", border: "#171744" }}
               >
-                Video Gallery
+                Players
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="drop-d">
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                <Dropdown.Item>
+                  {" "}
+                  <Link to="/createPlayer" style={{ textDecoration: "none" }}>
+                    Create Player Profile
+                  </Link>{" "}
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/getPlayers" style={{ textDecoration: "none" }}>
+                    Get Player Profile
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/createPlayer" style={{ textDecoration: "none" }}>
+                    Update Player Profile
+                  </Link>
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </li>

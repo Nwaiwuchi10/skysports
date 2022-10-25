@@ -61,7 +61,15 @@ function BasicExample() {
                   Scores
                 </Link>
               </Nav.Link> */}
-              <Nav.Link style={{ color: "whitesmoke" }}>Schedule</Nav.Link>
+              <Nav.Link style={{ color: "whitesmoke" }}>
+                {" "}
+                <Link
+                  to="/livegames"
+                  style={{ textDecoration: "none", color: "whitesmoke" }}
+                >
+                  Games
+                </Link>
+              </Nav.Link>
               <Nav.Link style={{ color: "whitesmoke" }}>Videos</Nav.Link>
               <Nav.Link style={{ color: "whitesmoke" }}>
                 <Link
@@ -73,7 +81,12 @@ function BasicExample() {
                 </Link>
               </Nav.Link>
               <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
-                Players
+                <Link
+                  to="/players"
+                  style={{ color: "whitesmoke", textDecoration: "none" }}
+                >
+                  Players
+                </Link>
               </Nav.Link>
               <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
                 Stats

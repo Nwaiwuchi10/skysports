@@ -35,8 +35,8 @@ const Analysis = ({ spain }) => {
           <div
             className="card-body"
             style={{
-              width: "100%",
-              height: "20vh",
+              width: "auto",
+              height: "25vh",
               // objectFit: "cover",
             }}
           >

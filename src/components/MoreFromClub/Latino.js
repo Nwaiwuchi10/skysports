@@ -32,7 +32,7 @@ const Latino = ({ poster }) => {
                 className="card-body"
                 style={{
                   width: "auto",
-                  height: "20vh",
+                  height: "25vh",
                   objectFit: "cover",
                 }}
               >

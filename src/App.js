@@ -42,6 +42,10 @@ import LiveGame from "./components/LiveGame/LiveGame";
 import LivesGames from "./LiveGames/LivesGames";
 import AdminUpdateMatch from "./screens/AdminScreens/AdminMatch/AdminUpdateMatch";
 import ErrorNotAdmin from "./screens/ErrorNotAdmin";
+import AdminPostPlayers from "./screens/AdminScreens/AdminPlayer/AdminPostPlayers";
+import AdminGetPlayers from "./screens/AdminScreens/AdminPlayer/AdminGetPlayers";
+import Players from "./components/Players/Players";
+import PlayersDetails from "./components/Players/PlayersDetails";
 
 function App() {
   const Admin = localStorage.getItem("isAdmin") === "true";
@@ -56,16 +60,20 @@ function App() {
         <Route path="/Adminlogin" element={<AdminLogin />} />
         <Route path="/error/notAnAdmin" element={<ErrorNotAdmin />} />
         <Route path="/signup" element={<SignUp />} />
-        {/* <Route
+        <Route
           path="/admin/:id"
           element={Admin ? <PersistentDrawerLeft /> : <HomePage />}
-        /> */}
-        <Route path="/admin/:id" element={<PersistentDrawerLeft />} />
+        />
+        <Route path="/playerProfile/:id" element={<PlayersDetails />} />
+        {/* <Route path="/admin/:id" element={<PersistentDrawerLeft />} /> */}
         <Route path="/createPost" element={<AdminCreatePost />} />
         <Route path="/teams" element={<Teams />} />
+        <Route path="/getPlayers" element={<AdminGetPlayers />} />
+        <Route path="/Players" element={<Players />} />
         <Route path="/leagues" element={<GameSchedule />} />
         <Route path="/newspost" element={<AdminGetPost />} />
         <Route path="/news" element={<News />} />
+        <Route path="/createPlayer" element={<AdminPostPlayers />} />
         <Route
           path="/nafaRules"
           element={<TheGame step1 step2 step3 step4 step5 />}

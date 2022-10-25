@@ -27,8 +27,12 @@ const LivesGames = () => {
       const { data } = await axios.get(
         "https://nafasports.herokuapp.com/api/match/"
       );
-      console.log(data);
+      // .then((json) => {
+      //   const data = json.sort((a, b) => a.league.localeCompare(b.league));
+      //   setPoster(data);
+      // });
       setPoster(data);
+      console.log(data);
       setLoading(false);
       setError(false);
 
@@ -189,7 +193,6 @@ const LivesGames = () => {
               </CardActionArea>
             </Card>
           </div>
-          {/* </Card> */}
         </div>
       </div>
     </div>
@@ -197,3 +200,9 @@ const LivesGames = () => {
 };
 
 export default LivesGames;
+{
+  /* </Card> */
+}
+// ?.sort((league, date) =>
+//   league.id > date.id ? 1 : -1
+// )
