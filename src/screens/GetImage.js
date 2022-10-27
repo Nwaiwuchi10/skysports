@@ -62,7 +62,7 @@ const GetImage = () => {
       ) : error ? (
         <Message variant="danger">Failed</Message>
       ) : (
-        <div>
+        <div style={{ marginBottom: "40px" }}>
           <h6 className="Div-h6-v">TRANSFER WINDOWS</h6>
           <hr className="hr" />
           {/* <Carousel> */}
