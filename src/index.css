@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.Nav.Link:hover {
+  color: red;
+}
 /* @media (max-width: 480px) {
   .cedy {
     border-top-left-radius: 70px;

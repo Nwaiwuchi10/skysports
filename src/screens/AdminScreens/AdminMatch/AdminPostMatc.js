@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 
 import anfl from "../../../assets/images/anfl.png";
 import CheckOutSteps from "./CheckOutGame";
+import AdminLayout from "../AdminLayout";
 const AdminPostMatch = () => {
   const navigate = useNavigate();
   const [tournament, setTournament] = useState("");
@@ -113,7 +114,7 @@ const AdminPostMatch = () => {
   return (
     // <!-- Section: Design Block -->
 
-    <div>
+    <AdminLayout>
       {/* <div>
         <CheckOutSteps step1 step2 step3 />
       </div> */}
@@ -373,7 +374,7 @@ const AdminPostMatch = () => {
           </div>
         </div>
       </section>
-    </div>
+    </AdminLayout>
     // <!-- Section: Design Block -->
   );
 };

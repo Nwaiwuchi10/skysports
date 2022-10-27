@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import BasicExample from "../../../components/navbar/NavBar";
 import { BsArrow90DegLeft } from "react-icons/bs";
 import AdminDashboard from "../AdminDashboard";
+import AdminLayout from "../AdminLayout";
 const AdminGetMatch = () => {
   const [user, setUser] = useState([]);
   const [news, setNews] = useState([]);
@@ -49,42 +50,7 @@ const AdminGetMatch = () => {
   }, []);
 
   return (
-    <div>
-      <BasicExample />
-      {/* <AdminDashboard /> */}
-
-      <div
-        style={{
-          broder: "1px solid grey",
-          borderRadius: "8px",
-          color: "#171744",
-          backgroundColor: "whitesmoke",
-          width: "50px",
-          height: "50px",
-          display: "flex",
-          textDecoration: "none",
-          textAlign: "center",
-          alignItems: "center",
-          borderColor: "grey",
-          justifyContent: "flex-start",
-          marginBottom: "30px",
-        }}
-      >
-        <Link
-          to={`/admin/${localStorage.getItem("isAdmin")}`}
-          style={{
-            display: "flex",
-            alignItem: "center",
-            fontSize: "20px",
-            justifyContent: "center",
-            texAlign: "center",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
-          <BsArrow90DegLeft />
-        </Link>{" "}
-      </div>
+    <AdminLayout>
       <h1 style={{ fontSize: "25px" }}>Game Fixtures & Result </h1>
       {loading ? (
         <Loader />
@@ -252,7 +218,7 @@ const AdminGetMatch = () => {
           </tbody>
         </Table>
       )}
-    </div>
+    </AdminLayout>
   );
 };
 

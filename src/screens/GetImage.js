@@ -7,6 +7,7 @@ import { Carousel } from "react-responsive-carousel";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Game from "../components/morecards/Game";
+import TransferWindows from "../components/morecards/TransferWindows";
 import Analysis from "../components/MoreFromClub/Analysis";
 import Latino from "../components/MoreFromClub/Latino";
 import Pagination from "../components/Pagination";
@@ -35,11 +36,48 @@ const GetImage = () => {
 
     fetchPosts();
   }, []);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const { data } = await axios.get(
+        "https://nafasports.herokuapp.com/api/posts/categories/TRANSFER WINDOWS"
+      );
+      console.log(data);
+      setSpanish(data);
+      setLoading(false);
+      setError(false);
+
+      localStorage.setItem("PostId", JSON.stringify(data));
+    };
+
+    fetchPosts();
+  }, []);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = poster?.images?.slice(firstPostIndex, lastPostIndex);
+  const currentPoster = spanish?.posts?.slice(firstPostIndex, lastPostIndex);
   return (
     <div>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant="danger">Failed</Message>
+      ) : (
+        <div>
+          <h6 className="Div-h6-v">TRANSFER WINDOWS</h6>
+          <hr className="hr" />
+          {/* <Carousel> */}
+          <div>
+            <TransferWindows spanish={currentPoster} />
+
+            <Pagination
+              totalPosts={spanish?.posts?.length}
+              postsPerPage={postsPerPage}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
+          </div>
+        </div>
+      )}
       {loading ? (
         <Loader />
       ) : error ? (

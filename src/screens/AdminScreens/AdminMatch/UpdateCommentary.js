@@ -1,58 +1,36 @@
 import joy from "../../../assets/images/joy.jpg";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import FileBase64 from "react-file-base64";
 import { BsArrow90DegLeft } from "react-icons/bs";
-
-import { toast } from "react-toastify";
+import AdminLayout from "../AdminLayout";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import CircularIndeterminate from "../../../components/Progress";
+// import CircularIndeterminate from "../../../components/Progress";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import BasicExample from "../../../components/navbar/NavBar";
-import anfl from "../../../assets/images/anfl.png";
-import AdminLayout from "../AdminLayout";
-const AdminCreateLeague = () => {
-  const navigate = useNavigate();
-  const [tournament, setTournament] = useState("");
-  const [leagueName, setLeagueName] = useState("");
-  const [abrv, setAbrv] = useState("");
 
-  const [image, setImage] = useState([]);
+import anfl from "../../../assets/images/anfl.png";
+import CircularIndeterminate from "../../../components/Progress";
+// import CheckOutSteps from "./CheckOutGame";
+const UpdateCommentary = () => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const [comment, setComment] = useState("");
+  const [commentTime, setCommentTime] = useState("");
+  const [commentator, setCommentator] = useState("");
+
   const [loading, setLoading] = useState(false);
 
   //   const userId = localStorage.getItem("userId");
 
-  const uploadimage = async (e) => {
-    const file = e.target.files[0];
-    const base64 = await convert2base64(file);
-    setImage(base64);
-    // setImage({ ...image, image: base64 });
-    console.log(base64);
-    // const reader = new FileReader();
-  };
-  const convert2base64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
-  };
-
   const submitHandler = (e) => {
     e.preventDefault();
     const data = {
-      tournament: tournament,
-      leagueName: leagueName,
-      image: image,
-
-      abrv: abrv,
+      comment: comment,
+      commentTime: commentTime,
+      commentator: commentator,
     };
 
     setLoading(true);
@@ -65,18 +43,20 @@ const AdminCreateLeague = () => {
     };
 
     axios
-      .post("https://nafasports.herokuapp.com/api/league", data, headers)
+      .put(
+        `https://nafasports.herokuapp.com/api/match/update/${id}`,
+        data,
+        headers
+      )
 
       .then((res) => {
         console.log(res.data);
         setLoading(false);
         if (res.data) {
-          setTournament("");
-          setLeagueName("");
+          setComment("");
+          setCommentTime("");
 
-          setAbrv("");
-
-          setImage("");
+          setCommentator("");
 
           //   const items = data;
           //   localStorage.setItem("User-Info", JSON.stringify(items));
@@ -89,19 +69,17 @@ const AdminCreateLeague = () => {
 
           console.log(res.data);
           toast.success("Post is sucessful");
-          navigate("/getLeague");
+          navigate("/getGameFixtures");
         } else {
           toast.error(res.data.error);
         }
       })
       .catch((err) => {
         setLoading(false);
-        toast.error("Invalid email & Password");
+        toast.error("Cannot Update results");
       });
   };
   return (
-    // <!-- Section: Design Block -->
-
     <AdminLayout>
       <section class="text-center">
         {/* <!-- Background image --> */}
@@ -135,63 +113,49 @@ const AdminCreateLeague = () => {
                   <div className="row">
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
-                        <input
-                          type="text"
-                          id="form3Example1"
-                          className="form-control"
-                          placeholder="Select Tournament"
-                          value={tournament}
-                          onChange={(e) => setTournament(e.target.value)}
-                        />
-                        <label className="form-label" for="form3Example1">
-                          Tournament
+                        <label className="form-label" for="form3Example2">
+                          Comment
                         </label>
-                      </div>
-                    </div>
-                    <div className="col-md-6 mb-4">
-                      <div className="form-outline">
                         <input
                           type="text"
                           id="form3Example2"
                           className="form-control"
-                          value={leagueName}
-                          onChange={(e) => setLeagueName(e.target.value)}
+                          value={comment}
+                          onChange={(e) => setComment(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example2">
-                          League Name
-                        </label>
                       </div>
                     </div>
                   </div>
-
-                  {/* <!-- Email input --> */}
-                  <div className="form-outline mb-4">
-                    <input
-                      type="text"
-                      id="form3Example3"
-                      className="form-control"
-                      value={abrv}
-                      onChange={(e) => setAbrv(e.target.value)}
-                    />
-                    <label class="form-label" for="form3Example3">
-                      Team Abbrevation
-                    </label>
-                  </div>
-
-                  {/* <!-- Password input --> */}
-
-                  <div className="form-outline mb-4">
-                    <input
-                      id="form2Example22"
-                      className="form-control"
-                      type="file"
-                      multiple
-                      accept=".jpeg, .png, .jpg, "
-                      onChange={(e) => uploadimage(e)}
-                    />
-                    <label className="form-label" for="form2Example22">
-                      Choose a file
-                    </label>
+                  <div className="row">
+                    <div className="col-md-6 mb-4">
+                      <div className="form-outline">
+                        <label className="form-label" for="form3Example1">
+                          Time
+                        </label>
+                        <input
+                          type="text"
+                          id="form3Example1"
+                          className="form-control"
+                          placeholder="Select Home Team"
+                          value={commentTime}
+                          onChange={(e) => setCommentTime(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="col-md-6 mb-4">
+                      <div className="form-outline">
+                        <label className="form-label" for="form3Example2">
+                          Commentator
+                        </label>
+                        <input
+                          type="text"
+                          id="form3Example2"
+                          className="form-control"
+                          value={commentator}
+                          onChange={(e) => setCommentator(e.target.value)}
+                        />
+                      </div>
+                    </div>
                   </div>
 
                   {/* <!-- Submit button --> */}
@@ -199,8 +163,9 @@ const AdminCreateLeague = () => {
                     type="submit"
                     className="btn btn-primary btn-block mb-4"
                   >
-                    Create a League
+                    Update Match Commentary
                   </button>
+                  <ToastContainer />
                 </form>
               </div>
             </div>
@@ -208,8 +173,7 @@ const AdminCreateLeague = () => {
         </div>
       </section>
     </AdminLayout>
-    // <!-- Section: Design Block -->
   );
 };
 
-export default AdminCreateLeague;
+export default UpdateCommentary;

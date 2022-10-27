@@ -134,8 +134,24 @@ const AssignRoles = () => {
                       {loading && <CircularIndeterminate />}
                       <form onSubmit={submitHandler}>
                         <p>Please create a user role here</p>
-
                         <div className="form-outline mb-4">
+                          <h5>{roles} </h5>
+                          <select
+                            className="form-outline mb-4"
+                            value={roles}
+                            onChange={(e) => setRoles(e.target.value)}
+                          >
+                            <option></option>
+                            <option>Client</option>
+                            <option>NewsCaster</option>
+                            <option>GAMES ADMIN</option>
+                          </select>
+                          <label className="form-label" for="form2Example11">
+                            USER ROLES
+                          </label>
+                        </div>
+
+                        {/* <div className="form-outline mb-4">
                           <input
                             type="text"
                             id="form2Example11"
@@ -147,7 +163,7 @@ const AssignRoles = () => {
                           <label className="form-label" for="form2Example11">
                             User Roles
                           </label>
-                        </div>
+                        </div> */}
 
                         <div className="text-center pt-1 mb-5 pb-1">
                           <button

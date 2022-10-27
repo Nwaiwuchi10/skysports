@@ -41,27 +41,32 @@ function BasicExample() {
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
-            style={{ color: "whitesmoke", background: "whitesmoke" }}
+            style={{
+              color: "whitesmoke",
+              background: "whitesmoke",
+            }}
           />
           <Navbar.Collapse id="basic-navbar-nav" className="toggle-div">
             <Nav className="me-auto">
-              <Nav.Link href="#home" style={{ color: "whitesmoke" }}>
+              <Nav.Link
+                style={{
+                  color: "whitesmoke",
+                }}
+                className="n-linkz"
+              >
                 <Link
                   to="/news"
-                  style={{ color: "whitesmoke", textDecoration: "none" }}
+                  style={{
+                    color: "whitesmoke",
+                    textDecoration: "none",
+                  }}
+                  className="n-linkz"
                 >
                   News
                 </Link>
               </Nav.Link>
-              {/* <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
-                <Link
-                  to="/livegames"
-                  style={{ textDecoration: "none", color: "whitesmoke" }}
-                >
-                  Scores
-                </Link>
-              </Nav.Link> */}
-              <Nav.Link style={{ color: "whitesmoke" }}>
+
+              <Nav.Link style={{ color: "whitesmoke" }} className="n-linkz">
                 {" "}
                 <Link
                   to="/livegames"
@@ -70,8 +75,10 @@ function BasicExample() {
                   Games
                 </Link>
               </Nav.Link>
-              <Nav.Link style={{ color: "whitesmoke" }}>Videos</Nav.Link>
-              <Nav.Link style={{ color: "whitesmoke" }}>
+              <Nav.Link style={{ color: "whitesmoke" }} className="n-linkz">
+                Videos
+              </Nav.Link>
+              <Nav.Link style={{ color: "whitesmoke" }} className="n-linkz">
                 <Link
                   to="/teams"
                   style={{ color: "whitesmoke", textDecoration: "none" }}
@@ -80,7 +87,7 @@ function BasicExample() {
                   Teams
                 </Link>
               </Nav.Link>
-              <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
+              <Nav.Link style={{ color: "whitesmoke" }} className="n-linkz">
                 <Link
                   to="/players"
                   style={{ color: "whitesmoke", textDecoration: "none" }}
@@ -88,16 +95,16 @@ function BasicExample() {
                   Players
                 </Link>
               </Nav.Link>
-              <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
+              <Nav.Link style={{ color: "whitesmoke" }} className="n-linkz">
                 Stats
               </Nav.Link>
-              <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
+              <Nav.Link style={{ color: "whitesmoke" }} className="n-linkz">
                 Standings
               </Nav.Link>
             </Nav>
             <div className="float-div">
               <Nav className="me-auto" style={{ color: "whitesmoke" }}>
-                <Nav.Link href="#home" style={{ color: "whitesmoke" }}>
+                <Nav.Link style={{ color: "whitesmoke" }} className="n-linkz">
                   <Link
                     to="/leagues"
                     style={{ color: "whitesmoke", textDecoration: "none" }}
@@ -105,7 +112,7 @@ function BasicExample() {
                     Leagues
                   </Link>
                 </Nav.Link>
-                <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
+                <Nav.Link style={{ color: "whitesmoke" }} className="n-linkz">
                   <Link
                     to="/livegames"
                     style={{ textDecoration: "none", color: "whitesmoke" }}
@@ -113,7 +120,7 @@ function BasicExample() {
                     Scores
                   </Link>
                 </Nav.Link>
-                <Nav.Link href="#link" style={{ color: "whitesmoke" }}>
+                <Nav.Link style={{ color: "whitesmoke" }} className="n-linkz">
                   <Link
                     to="/nafaRules"
                     style={{ color: "whitesmoke", textDecoration: "none" }}
@@ -146,7 +153,6 @@ function BasicExample() {
                     }}
                   >
                     <Nav.Link
-                      href="#link"
                       style={{
                         textDecoration: "none",
                         color: "whitesmoke",
@@ -155,6 +161,7 @@ function BasicExample() {
                         alignItem: "center",
                         textAlign: "cenetr",
                       }}
+                      className="n-linkz"
                     >
                       Sign In
                     </Nav.Link>

@@ -9,6 +9,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { BsArrow90DegLeft } from "react-icons/bs";
+import AdminLayout from "../AdminLayout";
 import CircularIndeterminate from "../../../components/Progress";
 import piccy from "../../../assets/images/piccy.jpg";
 const AdminPostPlayers = () => {
@@ -152,40 +153,7 @@ const AdminPostPlayers = () => {
       });
   };
   return (
-    <div>
-      <BasicExample />
-      <div
-        style={{
-          broder: "1px solid grey",
-          borderRadius: "8px",
-          color: "#171744",
-          backgroundColor: "whitesmoke",
-          width: "50px",
-          height: "50px",
-          display: "flex",
-          textDecoration: "none",
-          textAlign: "center",
-          alignItems: "center",
-          borderColor: "grey",
-          justifyContent: "flex-start",
-          marginBottom: "30px",
-        }}
-      >
-        <Link
-          to={`/admin/${localStorage.getItem("isAdmin")}`}
-          style={{
-            display: "flex",
-            alignItem: "center",
-            fontSize: "20px",
-            justifyContent: "center",
-            texAlign: "center",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
-          <BsArrow90DegLeft />
-        </Link>{" "}
-      </div>
+    <AdminLayout>
       <div class="container rounded bg-white mt-5 mb-5">
         {loading && <CircularIndeterminate />}
         <form onSubmit={submitHandler}>
@@ -454,7 +422,7 @@ const AdminPostPlayers = () => {
           </div>
         </form>
       </div>
-    </div>
+    </AdminLayout>
   );
 };
 

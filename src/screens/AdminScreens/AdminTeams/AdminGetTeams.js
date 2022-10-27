@@ -8,6 +8,7 @@ import Message from "../../../components/Message";
 import Loader from "../../../components/Loader";
 import { Link } from "react-router-dom";
 import BasicExample from "../../../components/navbar/NavBar";
+import AdminLayout from "../AdminLayout";
 const AdminGetTeams = () => {
   const [user, setUser] = useState([]);
   const [news, setNews] = useState([]);
@@ -59,8 +60,7 @@ const AdminGetTeams = () => {
   //     fetchPosts();
   //   }, []);
   return (
-    <div>
-      <BasicExample />
+    <AdminLayout>
       <h1 style={{ fontSize: "25px" }}>Teams </h1>
 
       {loading ? (
@@ -114,7 +114,7 @@ const AdminGetTeams = () => {
         </Table>
       )}
       <br />
-    </div>
+    </AdminLayout>
   );
 };
 

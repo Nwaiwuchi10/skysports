@@ -9,6 +9,7 @@ import Loader from "../../../components/Loader";
 import { Link } from "react-router-dom";
 import BasicExample from "../../../components/navbar/NavBar";
 import "./UserList2Screen.css";
+import AdminLayout from "../AdminLayout";
 const UserLIst2Screen = () => {
   const [user, setUser] = useState([]);
   const [news, setNews] = useState([]);
@@ -48,7 +49,7 @@ const UserLIst2Screen = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/users/roles/GameAdmin"
+        "https://nafasports.herokuapp.com/api/users/roles/GAMES ADMIN"
       );
       console.log(data);
       setGames(data);
@@ -62,7 +63,11 @@ const UserLIst2Screen = () => {
   return (
     <div className="userlist2-div">
       <h1
-        style={{ fontSize: "25px", display: "flex", justifyContent: "center" }}
+        style={{
+          fontSize: "25px",
+          display: "flex",
+          justifyContent: "center",
+        }}
       >
         Users{" "}
       </h1>

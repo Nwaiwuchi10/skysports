@@ -11,6 +11,8 @@ import BasicExample from "../../../components/navbar/NavBar";
 import Pagination from "../../../components/Pagination";
 import NewAdmin from "./Fetch/NewAdnin";
 import NewsAdminFetch from "./Fetch/NewsAdminFetch";
+import AdminDashboard from "../AdminDashboard";
+import AdminLayout from "../AdminLayout";
 // import "./GetPost.css";
 
 const AdminGetPost = () => {
@@ -24,7 +26,7 @@ const AdminGetPost = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/posts/categories/RUBY"
+        "https://nafasports.herokuapp.com/api/posts/categories/LATEST NEWS"
       );
       console.log(data);
       setPoster(data);
@@ -40,7 +42,7 @@ const AdminGetPost = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/posts/categories/HANDBALL"
+        "https://nafasports.herokuapp.com/api/posts/categories/GOSSIP"
       );
       console.log(data);
       setSpanish(data);
@@ -57,7 +59,8 @@ const AdminGetPost = () => {
   const currentPosts = poster?.posts?.slice(firstPostIndex, lastPostIndex);
   const currentPoster = spanish?.posts?.slice(firstPostIndex, lastPostIndex);
   return (
-    <div>
+    <AdminLayout>
+      {/* <AdminDashboard /> */}
       <div>
         {loading ? (
           <Loader />
@@ -110,7 +113,7 @@ const AdminGetPost = () => {
           <div className="more-analysis">MORE ANALYSIS</div>
         </div>
       </div>
-    </div>
+    </AdminLayout>
   );
 };
 

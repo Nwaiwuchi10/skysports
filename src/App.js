@@ -46,7 +46,11 @@ import AdminPostPlayers from "./screens/AdminScreens/AdminPlayer/AdminPostPlayer
 import AdminGetPlayers from "./screens/AdminScreens/AdminPlayer/AdminGetPlayers";
 import Players from "./components/Players/Players";
 import PlayersDetails from "./components/Players/PlayersDetails";
-
+import Commentary from "./screens/AdminScreens/AdminMatch/Commentary";
+import UpdateCommentary from "./screens/AdminScreens/AdminMatch/UpdateCommentary";
+import AdminProfile from "./screens/AdminScreens/AdminProfile";
+import AdminLayout from "./screens/AdminScreens/AdminLayout";
+import AdminPlayerDetails from "./screens/AdminScreens/AdminPlayer/AdminGetPlayerDetails";
 function App() {
   const Admin = localStorage.getItem("isAdmin") === "true";
   return (
@@ -60,12 +64,25 @@ function App() {
         <Route path="/Adminlogin" element={<AdminLogin />} />
         <Route path="/error/notAnAdmin" element={<ErrorNotAdmin />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/AdminProfile" element={<AdminProfile />} />
         <Route
           path="/admin/:id"
-          element={Admin ? <PersistentDrawerLeft /> : <HomePage />}
+          element={Admin ? <AdminProfile /> : <HomePage />}
         />
+        {/* <Route
+          path="/admin/:id"
+          element={Admin ? <AdminLayout /> : <HomePage />}
+        /> */}
+        {/* <Route
+          path="/admin/:id"
+          element={Admin ? <PersistentDrawerLeft /> : <HomePage />}
+        /> */}
         <Route path="/playerProfile/:id" element={<PlayersDetails />} />
-        {/* <Route path="/admin/:id" element={<PersistentDrawerLeft />} /> */}
+        <Route
+          path="/AdminplayerProfile/:id"
+          element={<AdminPlayerDetails />}
+        />
+
         <Route path="/createPost" element={<AdminCreatePost />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/getPlayers" element={<AdminGetPlayers />} />
@@ -96,6 +113,10 @@ function App() {
         <Route path="/getTeam" element={<AdminGetTeams />} />
         <Route path="/userRole" element={<UserLIstScreen />} />
         <Route path="/admin/user/:id/edit" element={<AssignRoles />} />
+        <Route
+          path="/admin/fixtures/commentary/:id/edit"
+          element={<UpdateCommentary />}
+        />
         <Route path="/newsDetails/:id" element={<NewsDetails />} />
         <Route path="/admin/user/:id/adminedit" element={<AssignAdmin />} />
         <Route path="/admin/fixtures/:id/edit" element={<AdminUpdateMatch />} />

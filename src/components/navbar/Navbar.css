@@ -34,6 +34,11 @@
   font-size: large;
   font-weight: 500;
 }
+.n-linkz:hover {
+  /* background-color: rgb(39, 17, 165); */
+  background-color: indigo;
+  color: blue;
+}
 @media (max-width: 1200px) {
   .float-div {
     display: block;

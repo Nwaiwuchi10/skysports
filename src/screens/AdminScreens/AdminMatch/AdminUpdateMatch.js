@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import CircularIndeterminate from "../../../components/Progress";
 import axios from "axios";
+import AdminLayout from "../AdminLayout";
 import { Link } from "react-router-dom";
 
 import anfl from "../../../assets/images/anfl.png";
@@ -118,7 +119,7 @@ const AdminUpdateMatch = () => {
   return (
     // <!-- Section: Design Block -->
 
-    <div>
+    <AdminLayout>
       {/* <div>
         <CheckOutSteps step1 step2 step3 />
       </div> */}
@@ -409,7 +410,7 @@ const AdminUpdateMatch = () => {
           </div>
         </div>
       </section>
-    </div>
+    </AdminLayout>
     // <!-- Section: Design Block -->
   );
 };

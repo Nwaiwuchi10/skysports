@@ -11,7 +11,8 @@ import CircularIndeterminate from "../../../components/Progress";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import BasicExample from "../../../components/navbar/NavBar";
-
+import AdminLayout from "../AdminLayout";
+import anfl from "../../../assets/images/anfl.png";
 const AdminCreateTeams = () => {
   const navigate = useNavigate();
   const [tournament, setTournament] = useState("");
@@ -104,46 +105,13 @@ const AdminCreateTeams = () => {
   return (
     // <!-- Section: Design Block -->
 
-    <div>
-      <BasicExample />
-      <div
-        style={{
-          broder: "1px solid grey",
-          borderRadius: "8px",
-          color: "#171744",
-          backgroundColor: "whitesmoke",
-          width: "50px",
-          height: "50px",
-          display: "flex",
-          textDecoration: "none",
-          textAlign: "center",
-          alignItems: "center",
-          borderColor: "grey",
-          justifyContent: "flex-start",
-          marginBottom: "30px",
-        }}
-      >
-        <Link
-          to={`/admin/${localStorage.getItem("isAdmin")}`}
-          style={{
-            display: "flex",
-            alignItem: "center",
-            fontSize: "20px",
-            justifyContent: "center",
-            texAlign: "center",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
-          <BsArrow90DegLeft />
-        </Link>{" "}
-      </div>
+    <AdminLayout>
       <section class="text-center">
         {/* <!-- Background image --> */}
         <div
           className="p-5 bg-image"
           style={{
-            backgroundImage: `url(${joy})`,
+            backgroundImage: `url(${anfl})`,
             height: "300px",
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -254,7 +222,7 @@ const AdminCreateTeams = () => {
           </div>
         </div>
       </section>
-    </div>
+    </AdminLayout>
     // <!-- Section: Design Block -->
   );
 };

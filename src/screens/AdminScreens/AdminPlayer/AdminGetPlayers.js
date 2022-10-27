@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Loader from "../../../components/Loader";
+import AdminLayout from "../AdminLayout";
 import BasicExample from "../../../components/navbar/NavBar";
 
 const AdminGetPlayers = () => {
@@ -25,74 +26,74 @@ const AdminGetPlayers = () => {
     fetchUsers();
   }, []);
   return (
-    <div className="div-plys">
-      <BasicExample />
-      <div
-        style={{
-          marginLeft: "30px",
-          marginRight: "30px",
-          marginTop: "30px",
-          marginBottom: "30px",
-        }}
-      >
-        <input
-          className="dsp-input"
-          type="text"
-          placeholder="Search Player By Name"
-          onChange={(e) => setSearchTitle(e.target.value)}
-        />
-        <div className="chioma">
-          {loading ? (
-            <Loader />
-          ) : (
-            users
-              ?.filter((value) => {
-                if (searchTitle === "") {
-                  return value;
-                } else if (
-                  value.surName
-                    .toLowerCase()
-                    .includes(searchTitle.toLowerCase())
-                ) {
-                  return value;
-                }
-              })
-              .map((usy) => (
-                <div>
-                  {searchTitle ? (
-                    <div className="ch-ply">
-                      <div key={usy._id}>
-                        <div className="dsp-ply">
-                          <Image
-                            src={usy.passport}
-                            fluid
-                            thumbnail
-                            className="img-dsp"
-                          />
-                          <h6>
-                            {" "}
-                            <Link
-                              to={`/playerProfile/${usy._id}`}
-                              style={{
-                                textDecoration: "none",
-                                marginLeft: "10px",
-                                color: "black",
-                              }}
-                            >
-                              {usy.surName} {usy.firstName}
-                            </Link>
-                          </h6>
+    <AdminLayout>
+      <div className="div-plys">
+        <div
+          style={{
+            marginLeft: "30px",
+            marginRight: "30px",
+            marginTop: "30px",
+            marginBottom: "30px",
+          }}
+        >
+          <input
+            className="dsp-input"
+            type="text"
+            placeholder="Search Player By Name"
+            onChange={(e) => setSearchTitle(e.target.value)}
+          />
+          <div className="chioma">
+            {loading ? (
+              <Loader />
+            ) : (
+              users
+                ?.filter((value) => {
+                  if (searchTitle === "") {
+                    return value;
+                  } else if (
+                    value.surName
+                      .toLowerCase()
+                      .includes(searchTitle.toLowerCase())
+                  ) {
+                    return value;
+                  }
+                })
+                .map((usy) => (
+                  <div>
+                    {searchTitle ? (
+                      <div className="ch-ply">
+                        <div key={usy._id}>
+                          <div className="dsp-ply">
+                            <Image
+                              src={usy.passport}
+                              fluid
+                              thumbnail
+                              className="img-dsp"
+                            />
+                            <h6>
+                              {" "}
+                              <Link
+                                to={`/AdminplayerProfile/${usy._id}`}
+                                style={{
+                                  textDecoration: "none",
+                                  marginLeft: "10px",
+                                  color: "black",
+                                }}
+                              >
+                                {usy.surName} {usy.firstName}
+                              </Link>
+                            </h6>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ) : null}
-                </div>
-              ))
-          )}
+                    ) : null}
+                  </div>
+                ))
+            )}
+          </div>
         </div>
       </div>
-      {/* <Footer /> */}
-    </div>
+    </AdminLayout>
   );
 };
 

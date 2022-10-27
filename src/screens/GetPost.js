@@ -22,7 +22,7 @@ const GetPost = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/posts/categories/RUBY"
+        "https://nafasports.herokuapp.com/api/posts/categories/LATEST NEWS"
       );
       console.log(data);
       setPoster(data);
@@ -38,7 +38,7 @@ const GetPost = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/posts/categories/HANDBALL"
+        "https://nafasports.herokuapp.com/api/posts/categories/GOSSIP"
       );
       console.log(data);
       setSpanish(data);
@@ -62,7 +62,7 @@ const GetPost = () => {
         <Message variant="danger">Failed</Message>
       ) : (
         <div>
-          <h6 className="Div-h6-v">Rubby</h6>
+          <h6 className="Div-h6-v">LATEST NEWS</h6>
           <hr className="hr" />
           {/* <Carousel> */}
           <div>
@@ -95,7 +95,7 @@ const GetPost = () => {
         </div>
       )}
       <div style={{ marginTop: "40px" }}>
-        <h6 className="Div-h6-v">HANDBALL</h6>
+        <h6 className="Div-h6-v">GOSSIP</h6>
         <hr className="hr" />
         <Row
           className="row-mp"

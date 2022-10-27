@@ -8,6 +8,7 @@ import Message from "../../../components/Message";
 import Loader from "../../../components/Loader";
 import { Link } from "react-router-dom";
 import BasicExample from "../../../components/navbar/NavBar";
+import AdminLayout from "../AdminLayout";
 const AdminGetLeagues = () => {
   const [user, setUser] = useState([]);
   const [news, setNews] = useState([]);
@@ -32,8 +33,7 @@ const AdminGetLeagues = () => {
   }, []);
 
   return (
-    <div>
-      <BasicExample />
+    <AdminLayout>
       <h1 style={{ fontSize: "25px" }}>Leagues </h1>
 
       {loading ? (
@@ -86,7 +86,7 @@ const AdminGetLeagues = () => {
         </Table>
       )}
       <br />
-    </div>
+    </AdminLayout>
   );
 };
 

@@ -8,6 +8,7 @@ import Message from "../../../components/Message";
 import Loader from "../../../components/Loader";
 import { Link } from "react-router-dom";
 import BasicExample from "../../../components/navbar/NavBar";
+import AdminLayout from "../AdminLayout";
 const UserLIstScreen = () => {
   const [user, setUser] = useState([]);
   const [news, setNews] = useState([]);
@@ -47,7 +48,7 @@ const UserLIstScreen = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/users/roles/GameAdmin"
+        "https://nafasports.herokuapp.com/api/users/roles/GAMES ADMIN"
       );
       console.log(data);
       setGames(data);
@@ -59,8 +60,7 @@ const UserLIstScreen = () => {
     fetchPosts();
   }, []);
   return (
-    <div>
-      <BasicExample />
+    <AdminLayout>
       <h1 style={{ fontSize: "25px" }}>Users </h1>
       <h2 style={{ fontSize: "25px" }}>Client Roles</h2>
       {loading ? (
@@ -247,7 +247,7 @@ const UserLIstScreen = () => {
           </Table>
         )}
       </div>
-    </div>
+    </AdminLayout>
   );
 };
 

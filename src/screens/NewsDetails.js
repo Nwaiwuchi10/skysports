@@ -73,19 +73,27 @@ const NewsDetails = () => {
                       </h3>
                     </ListGroup.Item>
                     <ListGroup.Item>{details?.desc}</ListGroup.Item>
+                    <div
+                      style={{
+                        Width: "20%",
+                        display: "block",
+                        flexDirection: "column",
+                        height: "80%",
 
-                    <ListGroup.Item>
-                      <h5>
-                        <Typewriter
+                        objectFit: "contain",
+                      }}
+                    >
+                      {details?.content}
+                      {/* <Typewriter
                           className="type-words"
                           words={[details?.content]}
                           loop={5}
                           typeSpeed={70}
                           deleteSpeed={50}
                           delaySpeed={1000}
-                        />
-                      </h5>
-                    </ListGroup.Item>
+                        /> */}
+                    </div>
+                    <ListGroup.Item></ListGroup.Item>
                   </ListGroup>
                 </Col>
                 {/* <Col md={3}>

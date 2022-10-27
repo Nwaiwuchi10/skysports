@@ -43,7 +43,6 @@ import UserLIst2Screen from "./AdminRoles/UserList2Screen";
 import NewsAdminFetch from "./newsBlog/Fetch/NewsAdminFetch";
 import AdminGetPost from "./newsBlog/AdminGetPost";
 import AdminProfile from "./AdminProfile";
-import AdminLayout from "./AdminLayout";
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -494,133 +493,82 @@ function ResponsiveDrawer(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <AdminLayout>
-      <Box sx={{ display: "flex" }}>
-        <CssBaseline />
-        <AppBar
-          position="fixed"
-          sx={{
-            bgcolor: "white",
-            width: { sm: `calc(100% - ${drawerWidth}px)` },
-            ml: { sm: `${drawerWidth}px` },
-          }}
-        >
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon style={{ color: "#171744" }} />
-            </IconButton>
-            <Typography variant="h6" noWrap component="div" color="#171744">
-              My DashBoard
-            </Typography>
-            {/* <div className="superadmin">SuperAdmin</div> */}
-          </Toolbar>
-        </AppBar>
-        <Box
-          component="nav"
-          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-          aria-label="mailbox folders"
-        >
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          <Drawer
-            container={container}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-            sx={{
-              display: { xs: "block", sm: "none" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: drawerWidth,
-              },
-            }}
+    <Box sx={{ display: "flex" }}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        sx={{
+          bgcolor: "white",
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+        }}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
           >
-            {drawer}
-          </Drawer>
-          <Drawer
-            variant="permanent"
-            sx={{
-              display: { xs: "none", sm: "block" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: drawerWidth,
-              },
-            }}
-            open
-          >
-            {drawer}
-          </Drawer>
-        </Box>
-        <Box
-          component="main"
-          sx={{
-            flexGrow: 1,
-            p: 3,
-            width: { sm: `calc(100% - ${drawerWidth}px)` },
-          }}
-        >
-          <Toolbar />
-          <Typography paragraph>
-            <AdminProfile />{" "}
+            <MenuIcon style={{ color: "#171744" }} />
+          </IconButton>
+          <Typography variant="h6" noWrap component="div" color="#171744">
+            Admin DashBoard
           </Typography>
-          {/* <Typography paragraph>
-          <div className="dashboard-display">
-            <div>
-              <div className="class-border">
-                <Typography gutterBottom variant="h5" component="div">
-                  <ImProfile style={{ fontSize: "40px" }} />
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Profile Menu
-                </Typography>
-              </div>
-            </div>
-            <div>
-              <div className="class-border">
-                <Typography gutterBottom variant="h5" component="div">
-                  <HiUserAdd style={{ fontSize: "40px" }} />
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Admin Profile
-                </Typography>
-              </div>
-            </div>
-            <div>
-              <div className="class-border">
-                <Typography gutterBottom variant="h5" component="div">
-                  <FaUserTie style={{ fontSize: "40px" }} />
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Administrator
-                </Typography>
-              </div>
-            </div>
-            <div>
-              <div className="class-border">
-                <Typography gutterBottom variant="h5" component="div">
-                  <ImEnvelop style={{ fontSize: "40px" }} />
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Messages
-                </Typography>
-              </div>
-            </div>
-          </div>
-        </Typography>
-        <Typography paragraph>
-          <UserLIst2Screen />
-        </Typography> */}
-        </Box>
+          {/* <div className="superadmin">SuperAdmin</div> */}
+        </Toolbar>
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
+      >
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: "none", sm: "block" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+          open
+        >
+          {drawer}
+        </Drawer>
       </Box>
-    </AdminLayout>
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+        }}
+      >
+        <Toolbar />
+        <Typography paragraph>{props.children}</Typography>
+      </Box>
+    </Box>
   );
 }
 
