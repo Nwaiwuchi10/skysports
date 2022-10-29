@@ -19,7 +19,7 @@ const PlayersDetails = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       const { data } = await axios.get(
-        `https://nafasports.herokuapp.com/api/players/${id}`
+        `http://localhost:5000/api/players/${id}`
       );
 
       setPlayerDetails(data);

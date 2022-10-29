@@ -38,11 +38,7 @@ const AdminCreateNewsCat = () => {
     };
 
     axios
-      .post(
-        "https://nafasports.herokuapp.com/api/posts/categories",
-        data,
-        headers
-      )
+      .post("http://localhost:5000/api/posts/categories", data, headers)
 
       .then((res) => {
         console.log(res.data);

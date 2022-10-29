@@ -22,7 +22,7 @@ const GetPost = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/posts/categories/LATEST NEWS"
+        "http://localhost:5000/api/posts/categories/LATEST NEWS"
       );
       console.log(data);
       setPoster(data);
@@ -38,7 +38,7 @@ const GetPost = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/posts/categories/GOSSIP"
+        "http://localhost:5000/api/posts/categories/GOSSIP"
       );
       console.log(data);
       setSpanish(data);

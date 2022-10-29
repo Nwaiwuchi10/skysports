@@ -16,9 +16,7 @@ const Players = () => {
   const [error, setError] = useState(true);
   useEffect(() => {
     const fetchUsers = async () => {
-      const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/players"
-      );
+      const { data } = await axios.get("http://localhost:5000/api/players");
 
       setUsers(data);
       setLoading(false);

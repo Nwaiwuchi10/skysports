@@ -15,7 +15,7 @@ const GetLiveFixture = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/match/matchDays/1"
+        "http://localhost:5000/api/match/matchDays/1"
       );
       console.log(data);
       setPoster(data);

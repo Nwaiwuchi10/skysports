@@ -100,7 +100,7 @@ const AdminPostPlayers = () => {
     };
 
     axios
-      .post("https://nafasports.herokuapp.com/api/players", data, headers)
+      .post("http://localhost:5000/api/players", data, headers)
 
       .then((res) => {
         console.log(res.data);

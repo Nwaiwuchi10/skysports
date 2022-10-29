@@ -65,7 +65,7 @@ const AdminCreateLeague = () => {
     };
 
     axios
-      .post("https://nafasports.herokuapp.com/api/league", data, headers)
+      .post("http://localhost:5000/api/league", data, headers)
 
       .then((res) => {
         console.log(res.data);

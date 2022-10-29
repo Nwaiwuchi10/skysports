@@ -24,7 +24,7 @@ const GetImage = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/imagegallery"
+        "http://localhost:5000/api/imagegallery"
       );
       console.log(data);
       setPoster(data);
@@ -39,7 +39,7 @@ const GetImage = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/posts/categories/TRANSFER WINDOWS"
+        "http://localhost:5000/api/posts/categories/TRANSFER WINDOWS"
       );
       console.log(data);
       setSpanish(data);

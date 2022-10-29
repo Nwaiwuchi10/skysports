@@ -65,7 +65,7 @@ const AdminPostMatch = () => {
     };
 
     axios
-      .post("https://nafasports.herokuapp.com/api/match", data, headers)
+      .post("http://localhost:5000/api/match", data, headers)
 
       .then((res) => {
         console.log(res.data);

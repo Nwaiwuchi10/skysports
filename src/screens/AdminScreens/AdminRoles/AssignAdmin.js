@@ -43,11 +43,7 @@ const AssignAdmin = ({}) => {
     };
 
     axios
-      .put(
-        `https://nafasports.herokuapp.com/api/users/admin/${id}`,
-        data,
-        headers
-      )
+      .put(`http://localhost:5000/api/users/admin/${id}`, data, headers)
 
       .then((res) => {
         console.log(res.data);

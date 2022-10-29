@@ -38,7 +38,7 @@ const CreateRoles = () => {
     };
 
     axios
-      .post("https://nafasports.herokuapp.com/api/users/roles", data, headers)
+      .post("http://localhost:5000/api/users/roles", data, headers)
 
       .then((res) => {
         console.log(res.data);

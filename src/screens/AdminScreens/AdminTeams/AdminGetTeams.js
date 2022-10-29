@@ -18,9 +18,7 @@ const AdminGetTeams = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/teams"
-      );
+      const { data } = await axios.get("http://localhost:5000/api/teams");
       console.log(data);
       setUser(data);
       setLoading(false);

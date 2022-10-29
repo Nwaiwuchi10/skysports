@@ -67,7 +67,7 @@ const AdminImageGallery = () => {
     };
 
     axios
-      .post("https://nafasports.herokuapp.com/api/imagegallery", data, headers)
+      .post("http://localhost:5000/api/imagegallery", data, headers)
 
       .then((res) => {
         console.log(res.data);

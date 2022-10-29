@@ -24,9 +24,7 @@ const LivesGames = () => {
   //   const [postsPerPage, setPostsPerPage] = useState(4);
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/match/"
-      );
+      const { data } = await axios.get("http://localhost:5000/api/match/");
       // .then((json) => {
       //   const data = json.sort((a, b) => a.league.localeCompare(b.league));
       //   setPoster(data);

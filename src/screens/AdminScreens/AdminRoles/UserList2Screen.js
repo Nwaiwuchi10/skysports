@@ -20,7 +20,7 @@ const UserLIst2Screen = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/users/roles/Client"
+        "http://localhost:5000/api/users/roles/Client"
       );
       console.log(data);
       setUser(data);
@@ -35,7 +35,7 @@ const UserLIst2Screen = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/users/roles/NewsCaster"
+        "http://localhost:5000/api/users/roles/NewsCaster"
       );
       console.log(data);
       setNews(data);
@@ -49,7 +49,7 @@ const UserLIst2Screen = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/users/roles/GAMES ADMIN"
+        "http://localhost:5000/api/users/roles/GAMES ADMIN"
       );
       console.log(data);
       setGames(data);

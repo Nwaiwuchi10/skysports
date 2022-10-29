@@ -71,7 +71,7 @@ const AdminCreatePost = () => {
     };
 
     axios
-      .post("https://nafasports.herokuapp.com/api/posts", data, headers)
+      .post("http://localhost:5000/api/posts", data, headers)
 
       .then((res) => {
         console.log(res.data);

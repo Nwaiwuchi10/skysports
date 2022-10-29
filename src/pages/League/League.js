@@ -11,9 +11,7 @@ const League = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/league/"
-      );
+      const { data } = await axios.get("http://localhost:5000/api/league/");
       console.log(data);
       setPoster(data);
       setLoading(false);
