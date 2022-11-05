@@ -19,7 +19,7 @@ const NewsAdminFetch = ({ poster }) => {
           height: "auto",
         }}
       >
-        <h1 style={{ fontSize: "25px" }}>Ruby News Blog </h1>
+        <h1 style={{ fontSize: "25px" }}>LATEST NEWS </h1>
 
         <Table striped bordered hover responsive className="table-sm">
           <thead>

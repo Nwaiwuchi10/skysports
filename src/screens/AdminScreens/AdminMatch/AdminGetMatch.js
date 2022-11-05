@@ -21,7 +21,7 @@ const AdminGetMatch = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "http://localhost:5000/api/match/matchDays/1"
+        "https://nafasports.herokuapp.com/api/match/matchDays/1"
       );
       console.log(data);
       setUser(data);

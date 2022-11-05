@@ -56,7 +56,7 @@ const SignUp = () => {
     };
 
     axios
-      .post("http://localhost:5000/api/auth/register", data, headers)
+      .post("https://nafasports.herokuapp.com/api/auth/register", data, headers)
 
       .then((res) => {
         console.log(res.data);

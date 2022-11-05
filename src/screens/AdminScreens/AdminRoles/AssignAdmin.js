@@ -43,7 +43,11 @@ const AssignAdmin = ({}) => {
     };
 
     axios
-      .put(`http://localhost:5000/api/users/admin/${id}`, data, headers)
+      .put(
+        `https://nafasports.herokuapp.com/api/users/admin/${id}`,
+        data,
+        headers
+      )
 
       .then((res) => {
         console.log(res.data);
@@ -103,15 +107,15 @@ const AssignAdmin = ({}) => {
                           <p>Please make a user an admin here</p>
 
                           <div className="form-outline mb-4">
+                            <label className="form-label" for="form2Example11">
+                              Admin User
+                            </label>
                             <Checkbox
                               type="checkbox"
                               label="Is Admin"
                               checked={isAdmin}
                               onChange={(e) => setIsAdmin(e.target.checked)}
                             ></Checkbox>
-                            <label className="form-label" for="form2Example11">
-                              Admin User
-                            </label>
                           </div>
 
                           <div className="text-center pt-1 mb-5 pb-1">

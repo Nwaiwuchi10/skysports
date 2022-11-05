@@ -38,7 +38,7 @@ const CreateRoles = () => {
     };
 
     axios
-      .post("http://localhost:5000/api/users/roles", data, headers)
+      .post("https://nafasports.herokuapp.com/api/users/roles", data, headers)
 
       .then((res) => {
         console.log(res.data);
@@ -90,6 +90,9 @@ const CreateRoles = () => {
                           <p>Please create a user role here</p>
 
                           <div className="form-outline mb-4">
+                            <label className="form-label" for="form2Example11">
+                              User Roles
+                            </label>
                             <input
                               type="text"
                               id="form2Example11"
@@ -98,9 +101,6 @@ const CreateRoles = () => {
                               value={roles}
                               onChange={(e) => setRoles(e.target.value)}
                             />
-                            <label className="form-label" for="form2Example11">
-                              User Roles
-                            </label>
                           </div>
 
                           <div className="text-center pt-1 mb-5 pb-1">

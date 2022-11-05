@@ -5,18 +5,25 @@ import { Col, Image, Row } from "react-bootstrap";
 import { ImGift } from "react-icons/im";
 import { Link } from "react-router-dom";
 import Loader from "../../components/Loader";
+import Partners from "../Partners/Partners";
 import Footer from "../Footer/Footer";
 import BasicExample from "../navbar/NavBar";
 import "./Players.css";
+import PlayersDisplay from "./PlayersDisplay";
+import Pagination from "../Pagination";
 
 const Players = () => {
   const [users, setUsers] = useState([]);
   const [searchTitle, setSearchTitle] = useState("");
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(20);
   const [error, setError] = useState(true);
   useEffect(() => {
     const fetchUsers = async () => {
-      const { data } = await axios.get("http://localhost:5000/api/players");
+      const { data } = await axios.get(
+        "https://nafasports.herokuapp.com/api/players"
+      );
 
       setUsers(data);
       setLoading(false);
@@ -25,6 +32,9 @@ const Players = () => {
     };
     fetchUsers();
   }, []);
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = users?.slice(firstPostIndex, lastPostIndex);
   return (
     <div className="div-plys">
       <BasicExample />
@@ -36,12 +46,14 @@ const Players = () => {
           marginBottom: "30px",
         }}
       >
+        <h4 className="text-left mb-4">Players List</h4>
         <input
           className="dsp-input"
           type="text"
           placeholder="Search Player By Name"
           onChange={(e) => setSearchTitle(e.target.value)}
         />
+
         <div className="chioma">
           {loading ? (
             <Loader />
@@ -92,6 +104,18 @@ const Players = () => {
           )}
         </div>
       </div>
+      <div>
+        <PlayersDisplay users={currentPosts} />
+
+        <Pagination
+          totalPosts={users?.length}
+          postsPerPage={postsPerPage}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
+      </div>
+      <hr />
+      <Partners />
       <Footer />
     </div>
   );

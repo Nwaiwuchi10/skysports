@@ -65,7 +65,7 @@ const AdminPostMatch = () => {
     };
 
     axios
-      .post("http://localhost:5000/api/match", data, headers)
+      .post("https://nafasports.herokuapp.com/api/match", data, headers)
 
       .then((res) => {
         console.log(res.data);
@@ -108,17 +108,17 @@ const AdminPostMatch = () => {
       })
       .catch((err) => {
         setLoading(false);
-        toast.error("Invalid email & Password");
+        toast.error("Failed to create");
       });
   };
   return (
     // <!-- Section: Design Block -->
 
-    <AdminLayout>
+    <div>
       {/* <div>
         <CheckOutSteps step1 step2 step3 />
       </div> */}
-      <section class="text-center">
+      <section>
         {/* <!-- Background image --> */}
         <div
           className="p-5 bg-image"
@@ -143,13 +143,16 @@ const AdminPostMatch = () => {
           <div className="card-body py-5 px-md-5">
             <div className="row d-flex justify-content-center">
               <div className="col-lg-8">
-                <h2 className="fw-bold mb-5">Create a Team</h2>
+                <h2 className="fw-bold mb-5">Create Fixtures</h2>
                 {loading && <CircularIndeterminate />}
                 <form onSubmit={submitHandler}>
                   {/* <!-- 2 column grid layout with text inputs for the first and last names --> */}
                   <div className="row">
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example1">
+                          Tournament
+                        </label>
                         <h5>{tournament} </h5>
                         <select
                           className="form-outline mb-4"
@@ -160,52 +163,54 @@ const AdminPostMatch = () => {
                           <option>Tackle Tournament</option>
                           <option>Flag Tournament</option>
                         </select>
-                        {/* <input
-                          type="text"
-                          id="form3Example1"
-                          className="form-control"
-                          placeholder="Select Tournament"
-                          value={tournament}
-                          onChange={(e) => setTournament(e.target.value)}
-                        /> */}
-                        <label className="form-label" for="form3Example1">
-                          Tournament
-                        </label>
                       </div>
                     </div>
+
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
-                        <input
-                          type="text"
-                          id="form3Example2"
-                          className="form-control"
+                        <label className="form-label" for="form3Example1">
+                          League
+                        </label>
+                        <h5>{league} </h5>
+                        <select
+                          className="form-outline mb-4"
                           value={league}
                           onChange={(e) => setLeague(e.target.value)}
-                        />
-                        <label className="form-label" for="form3Example2">
-                          League Name
-                        </label>
+                        >
+                          <option></option>
+                          <option>NSSFFL</option>
+                          <option>Academica</option>
+                          <option>Nigeria Premiership</option>
+                        </select>
                       </div>
                     </div>
                   </div>
                   <div className="row">
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
-                        <input
-                          type="text"
-                          id="form3Example1"
-                          className="form-control"
-                          placeholder="Select Home Team"
-                          value={matchDay}
-                          onChange={(e) => setMatchDay(e.target.value)}
-                        />
                         <label className="form-label" for="form3Example1">
                           Game Match Day
                         </label>
+                        <h5>{matchDay} </h5>
+                        <select
+                          className="form-outline mb-4"
+                          value={matchDay}
+                          onChange={(e) => setMatchDay(e.target.value)}
+                        >
+                          <option></option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
                       </div>
                     </div>
+
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example2">
+                          Season
+                        </label>
                         <input
                           type="text"
                           id="form3Example2"
@@ -213,15 +218,15 @@ const AdminPostMatch = () => {
                           value={season}
                           onChange={(e) => setSeason(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example2">
-                          Season
-                        </label>
                       </div>
                     </div>
                   </div>
                   <div className="row">
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example1">
+                          Home Team
+                        </label>
                         <input
                           type="text"
                           id="form3Example1"
@@ -230,13 +235,13 @@ const AdminPostMatch = () => {
                           value={team1}
                           onChange={(e) => setTeam1(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example1">
-                          Home Team
-                        </label>
                       </div>
                     </div>
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example2">
+                          Away Team
+                        </label>
                         <input
                           type="text"
                           id="form3Example2"
@@ -244,9 +249,6 @@ const AdminPostMatch = () => {
                           value={team2}
                           onChange={(e) => setTeam2(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example2">
-                          Away Team
-                        </label>
                       </div>
                     </div>
                   </div>
@@ -258,6 +260,9 @@ const AdminPostMatch = () => {
                   <div className="row">
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example1">
+                          Home Team Coach
+                        </label>
                         <input
                           type="text"
                           id="form3Example1"
@@ -266,13 +271,13 @@ const AdminPostMatch = () => {
                           value={coachTeam1}
                           onChange={(e) => setCoachTeam1(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example1">
-                          Home Team Coach
-                        </label>
                       </div>
                     </div>
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example2">
+                          Away Team Coach
+                        </label>
                         <input
                           type="text"
                           id="form3Example2"
@@ -280,15 +285,15 @@ const AdminPostMatch = () => {
                           value={coachTeam2}
                           onChange={(e) => setCoachTeam2(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example2">
-                          Away Team Coach
-                        </label>
                       </div>
                     </div>
                   </div>
                   <div className="row">
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example1">
+                          Kick Off Time
+                        </label>
                         <input
                           type="time"
                           id="form3Example1"
@@ -296,13 +301,13 @@ const AdminPostMatch = () => {
                           value={time}
                           onChange={(e) => setTime(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example1">
-                          Kick Off Time
-                        </label>
                       </div>
                     </div>
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example2">
+                          Kick Off Date
+                        </label>
                         <input
                           type="date"
                           id="form3Example2"
@@ -310,15 +315,15 @@ const AdminPostMatch = () => {
                           value={date}
                           onChange={(e) => setDate(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example2">
-                          Kick Off Date
-                        </label>
                       </div>
                     </div>
                   </div>
                   <div className="row">
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example1">
+                          Referee
+                        </label>
                         <input
                           type="text"
                           id="form3Example1"
@@ -327,13 +332,13 @@ const AdminPostMatch = () => {
                           value={referee}
                           onChange={(e) => setReferee(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example1">
-                          Referee
-                        </label>
                       </div>
                     </div>
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example2">
+                          Halfs
+                        </label>
                         <input
                           type="text"
                           id="form3Example2"
@@ -341,14 +346,14 @@ const AdminPostMatch = () => {
                           value={halfs}
                           onChange={(e) => setHalfs(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example2">
-                          Halfs
-                        </label>
                       </div>
                     </div>
                   </div>
 
                   <div className="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">
+                      Game Status
+                    </label>
                     <input
                       type="text"
                       id="form3Example3"
@@ -356,9 +361,6 @@ const AdminPostMatch = () => {
                       value={status}
                       onChange={(e) => setStatus(e.target.value)}
                     />
-                    <label class="form-label" for="form3Example3">
-                      Game Status
-                    </label>
                   </div>
                   {/* <!-- Submit button --> */}
                   <button
@@ -374,7 +376,7 @@ const AdminPostMatch = () => {
           </div>
         </div>
       </section>
-    </AdminLayout>
+    </div>
     // <!-- Section: Design Block -->
   );
 };

@@ -32,7 +32,9 @@ const NewsDetails = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await axios.get(`http://localhost:5000/api/posts/${id}`);
+      const { data } = await axios.get(
+        `https://nafasports.herokuapp.com/api/posts/${id}`
+      );
       console.log(data);
       setDetails(data);
       setLoading(false);

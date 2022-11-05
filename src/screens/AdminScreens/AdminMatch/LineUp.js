@@ -65,7 +65,7 @@ const LineUp = () => {
     };
 
     axios
-      .post("http://localhost:5000/api/match", data, headers)
+      .post("https://nafasports.herokuapp.com/api/match", data, headers)
 
       .then((res) => {
         console.log(res.data);

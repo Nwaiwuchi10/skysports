@@ -56,7 +56,7 @@ const LoginScreen = () => {
     };
 
     axios
-      .post("http://localhost:5000/api/auth/login", data, headers)
+      .post("https://nafasports.herokuapp.com/api/auth/login", data, headers)
 
       .then((res) => {
         console.log(res.data);

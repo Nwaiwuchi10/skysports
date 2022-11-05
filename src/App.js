@@ -51,6 +51,14 @@ import UpdateCommentary from "./screens/AdminScreens/AdminMatch/UpdateCommentary
 import AdminProfile from "./screens/AdminScreens/AdminProfile";
 import AdminLayout from "./screens/AdminScreens/AdminLayout";
 import AdminPlayerDetails from "./screens/AdminScreens/AdminPlayer/AdminGetPlayerDetails";
+import AdminCreateCoach from "./screens/AdminScreens/AdminCoaches/AdminCreateCoach";
+import AdminGetCoaches from "./screens/AdminScreens/AdminCoaches/AdminGetCoaches";
+import AdminCoachDetails from "./screens/AdminScreens/AdminCoaches/AdminCoachDetails";
+import AdminCreateOfficials from "./screens/AdminScreens/AdminOfficials/AdminCreateOfficials";
+import AdminGetOfficials from "./screens/AdminScreens/AdminOfficials/AdminGetOfficials";
+import AdminGetOfficialDetails from "./screens/AdminScreens/AdminOfficials/AdminGetOfficialDetails";
+import PlayersHomePage from "./components/Players/PlayersHomePage";
+import TeamPlayers from "./components/Players/TeamPlayers";
 function App() {
   const Admin = localStorage.getItem("isAdmin") === "true";
   return (
@@ -65,6 +73,10 @@ function App() {
         <Route path="/error/notAnAdmin" element={<ErrorNotAdmin />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/AdminProfile" element={<AdminProfile />} />
+        <Route path="/createCoach" element={<AdminCreateCoach />} />
+        <Route path="/createOfficials" element={<AdminCreateOfficials />} />
+        <Route path="/getOfficials" element={<AdminGetOfficials />} />
+        <Route path="/getCoaches" element={<AdminGetCoaches />} />
         <Route
           path="/admin/:id"
           element={Admin ? <AdminProfile /> : <HomePage />}
@@ -82,11 +94,17 @@ function App() {
           path="/AdminplayerProfile/:id"
           element={<AdminPlayerDetails />}
         />
-
+        <Route
+          path="/AdminofficialProfile/:id"
+          element={<AdminGetOfficialDetails />}
+        />
+        <Route path="/AdmincoachProfile/:id" element={<AdminCoachDetails />} />
         <Route path="/createPost" element={<AdminCreatePost />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/getPlayers" element={<AdminGetPlayers />} />
-        <Route path="/Players" element={<Players />} />
+        <Route path="/Players" element={<PlayersHomePage />} />
+        <Route path="/TeamPlayers" element={<TeamPlayers />} />
+        <Route path="/PollPlayers" element={<Players />} />
         <Route path="/leagues" element={<GameSchedule />} />
         <Route path="/newspost" element={<AdminGetPost />} />
         <Route path="/news" element={<News />} />

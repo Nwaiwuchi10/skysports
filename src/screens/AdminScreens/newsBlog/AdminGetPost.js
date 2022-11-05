@@ -26,7 +26,7 @@ const AdminGetPost = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "http://localhost:5000/api/posts/categories/LATEST NEWS"
+        "https://nafasports.herokuapp.com/api/posts/categories/LATEST NEWS"
       );
       console.log(data);
       setPoster(data);
@@ -42,7 +42,7 @@ const AdminGetPost = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "http://localhost:5000/api/posts/categories/GOSSIP"
+        "https://nafasports.herokuapp.com/api/posts/categories/GOSSIP"
       );
       console.log(data);
       setSpanish(data);
@@ -98,7 +98,7 @@ const AdminGetPost = () => {
           </div>
         )}
         <div style={{ marginTop: "40px" }}>
-          <h6 className="Div-h6-v">HANDBALL</h6>
+          <h6 className="Div-h6-v">Gossip</h6>
           <hr className="hr" />
           <div>
             <NewAdmin spanish={currentPoster} />
@@ -110,7 +110,7 @@ const AdminGetPost = () => {
               currentPage={currentPage}
             />
           </div>
-          <div className="more-analysis">MORE ANALYSIS</div>
+          {/* <div className="more-analysis">MORE ANALYSIS</div> */}
         </div>
       </div>
     </AdminLayout>

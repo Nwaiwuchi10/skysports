@@ -18,7 +18,9 @@ const AdminTournament = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await axios.get("http://localhost:5000/api/tournament");
+      const { data } = await axios.get(
+        "https://nafasports.herokuapp.com/api/tournament"
+      );
       console.log(data);
       setUser(data);
       setLoading(false);

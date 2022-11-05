@@ -10,7 +10,7 @@ import AdminLayout from "../../AdminLayout";
 
 const NewAdmin = ({ spanish }) => {
   return (
-    <AdminLayout>
+    <div>
       <div
         style={{
           width: "100%",
@@ -60,7 +60,7 @@ const NewAdmin = ({ spanish }) => {
           </tbody>
         </Table>
       </div>
-    </AdminLayout>
+    </div>
   );
 };
 

@@ -71,7 +71,7 @@ const AdminCreatePost = () => {
     };
 
     axios
-      .post("http://localhost:5000/api/posts", data, headers)
+      .post("https://nafasports.herokuapp.com/api/posts", data, headers)
 
       .then((res) => {
         console.log(res.data);
@@ -137,6 +137,9 @@ const AdminCreatePost = () => {
                           <p>Create your news post here</p>
 
                           <div className="form-outline mb-4">
+                            <label className="form-label" for="form2Example11">
+                              News Caption
+                            </label>
                             <input
                               type="text"
                               id="form2Example11"
@@ -145,9 +148,6 @@ const AdminCreatePost = () => {
                               value={caption}
                               onChange={(e) => setCaption(e.target.value)}
                             />
-                            <label className="form-label" for="form2Example11">
-                              News Caption
-                            </label>
                           </div>
                           <div className="form-outline mb-4">
                             <h5>{category} </h5>
@@ -179,6 +179,9 @@ const AdminCreatePost = () => {
                           </label>
                         </div> */}
                           <div className="form-outline mb-4">
+                            <label className="form-label" for="form2Example22">
+                              News Description
+                            </label>
                             <input
                               type="text"
                               id="form2Example22"
@@ -186,30 +189,32 @@ const AdminCreatePost = () => {
                               value={desc}
                               onChange={(e) => setDesc(e.target.value)}
                             />
-                            <label className="form-label" for="form2Example22">
-                              News Description
-                            </label>
                           </div>
-                          <div class="form-outline">
-                            {/* <input
+                          <div className="form-outline mb-4">
+                            <div class="form-outline">
+                              <label class="form-label" for="textAreaExample">
+                                News Content
+                              </label>
+                              {/* <input
                               type="text"
                               id="form2Example22"
                               className="form-control"
                               value={content}
                               onChange={(e) => setContent(e.target.value)}
                             /> */}
-                            <textarea
-                              class="form-control"
-                              id="textAreaExample"
-                              rows="4"
-                              value={content}
-                              onChange={(e) => setContent(e.target.value)}
-                            />
-                            <label class="form-label" for="textAreaExample">
-                              News Content
-                            </label>
+                              <textarea
+                                class="form-control"
+                                id="textAreaExample"
+                                rows="4"
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                              />
+                            </div>
                           </div>
                           <div className="form-outline mb-4">
+                            <label className="form-label" for="form2Example22">
+                              Choose a file
+                            </label>
                             <input
                               id="form2Example22"
                               className="form-control"
@@ -218,9 +223,6 @@ const AdminCreatePost = () => {
                               accept=".jpeg, .png, .jpg, "
                               onChange={(e) => uploadimage(e)}
                             />
-                            <label className="form-label" for="form2Example22">
-                              Choose a file
-                            </label>
                           </div>
                           <div className="text-center pt-1 mb-5 pb-1">
                             <button

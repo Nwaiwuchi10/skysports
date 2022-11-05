@@ -68,7 +68,7 @@ const AdminCreateTeams = () => {
     };
 
     axios
-      .post("http://localhost:5000/api/teams", data, headers)
+      .post("https://nafasports.herokuapp.com/api/teams", data, headers)
 
       .then((res) => {
         console.log(res.data);
@@ -106,7 +106,7 @@ const AdminCreateTeams = () => {
     // <!-- Section: Design Block -->
 
     <AdminLayout>
-      <section class="text-center">
+      <section>
         {/* <!-- Background image --> */}
         <div
           className="p-5 bg-image"
@@ -138,37 +138,46 @@ const AdminCreateTeams = () => {
                   <div className="row">
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
-                        <input
-                          type="text"
-                          id="form3Example1"
-                          className="form-control"
-                          placeholder="Select Tournament"
-                          value={tournament}
-                          onChange={(e) => setTournament(e.target.value)}
-                        />
                         <label className="form-label" for="form3Example1">
                           Tournament
                         </label>
+                        <h5>{tournament} </h5>
+                        <select
+                          className="form-outline mb-4"
+                          value={tournament}
+                          onChange={(e) => setTournament(e.target.value)}
+                        >
+                          <option></option>
+                          <option>Tackle Tournament</option>
+                          <option>Flag Tournament</option>
+                        </select>
                       </div>
                     </div>
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
-                        <input
-                          type="text"
-                          id="form3Example2"
-                          className="form-control"
-                          value={league}
-                          onChange={(e) => setLeague(e.target.value)}
-                        />
-                        <label className="form-label" for="form3Example2">
+                        <label className="form-label" for="form3Example1">
                           League
                         </label>
+                        <h5>{tournament} </h5>
+                        <select
+                          className="form-outline mb-4"
+                          value={league}
+                          onChange={(e) => setLeague(e.target.value)}
+                        >
+                          <option></option>
+                          <option>NSSFFL</option>
+                          <option>Academical</option>
+                          <option>Professional</option>
+                        </select>
                       </div>
                     </div>
                   </div>
 
                   {/* <!-- Email input --> */}
                   <div className="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">
+                      Team Name
+                    </label>
                     <input
                       type="text"
                       id="form3Example3"
@@ -176,13 +185,13 @@ const AdminCreateTeams = () => {
                       value={teamName}
                       onChange={(e) => setTeamName(e.target.value)}
                     />
-                    <label class="form-label" for="form3Example3">
-                      Team Name
-                    </label>
                   </div>
 
                   {/* <!-- Password input --> */}
                   <div className="form-outline mb-4">
+                    <label className="form-label" for="form3Example4">
+                      Team Abbrevation
+                    </label>
                     <input
                       type="text"
                       id="form3Example4"
@@ -190,12 +199,12 @@ const AdminCreateTeams = () => {
                       value={teamShorthand}
                       onChange={(e) => setTeamShorthand(e.target.value)}
                     />
-                    <label className="form-label" for="form3Example4">
-                      Team Abbrevation
-                    </label>
                   </div>
 
                   <div className="form-outline mb-4">
+                    <label className="form-label" for="form2Example22">
+                      Choose a file
+                    </label>
                     <input
                       id="form2Example22"
                       className="form-control"
@@ -204,9 +213,6 @@ const AdminCreateTeams = () => {
                       accept=".jpeg, .png, .jpg, "
                       onChange={(e) => uploadimage(e)}
                     />
-                    <label className="form-label" for="form2Example22">
-                      Choose a file
-                    </label>
                   </div>
 
                   {/* <!-- Submit button --> */}

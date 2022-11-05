@@ -19,7 +19,7 @@ const UserLIstScreen = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await axios.get(
-        "http://localhost:5000/api/users/roles/Client"
+        "https://nafasports.herokuapp.com/api/users/roles/Client"
       );
       console.log(data);
       setUser(data);

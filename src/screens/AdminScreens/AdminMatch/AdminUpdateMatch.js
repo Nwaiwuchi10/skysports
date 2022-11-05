@@ -66,7 +66,11 @@ const AdminUpdateMatch = () => {
     };
 
     axios
-      .put(`http://localhost:5000/api/match/update/${id}`, data, headers)
+      .put(
+        `https://nafasports.herokuapp.com/api/match/update/${id}`,
+        data,
+        headers
+      )
 
       .then((res) => {
         console.log(res.data);

@@ -14,6 +14,7 @@ import CardMedia from "@mui/material/CardMedia";
 import "./LivesGames.css";
 import { CardActionArea } from "@mui/material";
 import BasicExample from "../components/navbar/NavBar";
+import Footer from "../components/Footer/Footer";
 
 const LivesGames = () => {
   const [poster, setPoster] = useState([]);
@@ -24,7 +25,9 @@ const LivesGames = () => {
   //   const [postsPerPage, setPostsPerPage] = useState(4);
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await axios.get("http://localhost:5000/api/match/");
+      const { data } = await axios.get(
+        "https://nafasports.herokuapp.com/api/match/"
+      );
       // .then((json) => {
       //   const data = json.sort((a, b) => a.league.localeCompare(b.league));
       //   setPoster(data);
@@ -92,12 +95,13 @@ const LivesGames = () => {
                           className="lister"
                           style={{ borderRadius: "0px" }}
                         >
+                          <ListGroup.Item>NSSFFL</ListGroup.Item>
                           <ListGroup.Item>Nigerian Premier</ListGroup.Item>
-                          <ListGroup.Item>UEFA</ListGroup.Item>
-                          <ListGroup.Item>ACADEMY</ListGroup.Item>
+
+                          <ListGroup.Item>ACADEMICA</ListGroup.Item>
                           <ListGroup.Item>FEMALE PROFESSIONAL</ListGroup.Item>
-                          <ListGroup.Item>UNDER 23 MALE</ListGroup.Item>
-                          <ListGroup.Item>UNDER 23 FEMALE</ListGroup.Item>
+                          <ListGroup.Item>NSSFFL JUNIOR</ListGroup.Item>
+                          <ListGroup.Item>LAGOS</ListGroup.Item>
                           <ListGroup.Item>KD LEAGUE</ListGroup.Item>
                           <ListGroup.Item>e.t.c</ListGroup.Item>
                         </ListGroup>
@@ -193,6 +197,7 @@ const LivesGames = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -65,7 +65,7 @@ const AdminCreateLeague = () => {
     };
 
     axios
-      .post("http://localhost:5000/api/league", data, headers)
+      .post("https://nafasports.herokuapp.com/api/league", data, headers)
 
       .then((res) => {
         console.log(res.data);
@@ -103,7 +103,7 @@ const AdminCreateLeague = () => {
     // <!-- Section: Design Block -->
 
     <AdminLayout>
-      <section class="text-center">
+      <section>
         {/* <!-- Background image --> */}
         <div
           className="p-5 bg-image"
@@ -128,28 +128,33 @@ const AdminCreateLeague = () => {
           <div className="card-body py-5 px-md-5">
             <div className="row d-flex justify-content-center">
               <div className="col-lg-8">
-                <h2 className="fw-bold mb-5">Create a Team</h2>
+                <h2 className="fw-bold mb-5">Create a League</h2>
                 {loading && <CircularIndeterminate />}
                 <form onSubmit={submitHandler}>
                   {/* <!-- 2 column grid layout with text inputs for the first and last names --> */}
                   <div className="row">
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
-                        <input
-                          type="text"
-                          id="form3Example1"
-                          className="form-control"
-                          placeholder="Select Tournament"
-                          value={tournament}
-                          onChange={(e) => setTournament(e.target.value)}
-                        />
                         <label className="form-label" for="form3Example1">
                           Tournament
                         </label>
+                        <h5>{tournament} </h5>
+                        <select
+                          className="form-outline mb-4"
+                          value={tournament}
+                          onChange={(e) => setTournament(e.target.value)}
+                        >
+                          <option></option>
+                          <option>Tackle Tournament</option>
+                          <option>Flag Tournament</option>
+                        </select>
                       </div>
                     </div>
                     <div className="col-md-6 mb-4">
                       <div className="form-outline">
+                        <label className="form-label" for="form3Example2">
+                          League Name
+                        </label>
                         <input
                           type="text"
                           id="form3Example2"
@@ -157,15 +162,15 @@ const AdminCreateLeague = () => {
                           value={leagueName}
                           onChange={(e) => setLeagueName(e.target.value)}
                         />
-                        <label className="form-label" for="form3Example2">
-                          League Name
-                        </label>
                       </div>
                     </div>
                   </div>
 
                   {/* <!-- Email input --> */}
                   <div className="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">
+                      Team Abbrevation
+                    </label>
                     <input
                       type="text"
                       id="form3Example3"
@@ -173,14 +178,14 @@ const AdminCreateLeague = () => {
                       value={abrv}
                       onChange={(e) => setAbrv(e.target.value)}
                     />
-                    <label class="form-label" for="form3Example3">
-                      Team Abbrevation
-                    </label>
                   </div>
 
                   {/* <!-- Password input --> */}
 
                   <div className="form-outline mb-4">
+                    <label className="form-label" for="form2Example22">
+                      Choose a file
+                    </label>
                     <input
                       id="form2Example22"
                       className="form-control"
@@ -189,9 +194,6 @@ const AdminCreateLeague = () => {
                       accept=".jpeg, .png, .jpg, "
                       onChange={(e) => uploadimage(e)}
                     />
-                    <label className="form-label" for="form2Example22">
-                      Choose a file
-                    </label>
                   </div>
 
                   {/* <!-- Submit button --> */}

@@ -348,59 +348,6 @@ function ResponsiveDrawer(props) {
             </Dropdown>
           </li>
           <li style={{ display: "flex" }}>
-            <MdFollowTheSigns
-              style={{
-                fontSize: "25px",
-                marginTop: "auto",
-                marginBottom: "auto",
-              }}
-            />
-            <Dropdown>
-              <Dropdown.Toggle
-                id="dropdown-basic"
-                style={{ backgroundColor: "#171744", border: "#171744" }}
-              >
-                Officials
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu className="drop-d">
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </li>
-          <li style={{ display: "flex" }}>
-            <BsFillImageFill
-              style={{
-                fontSize: "25px",
-                marginTop: "auto",
-                marginBottom: "auto",
-              }}
-            />
-            <Dropdown>
-              <Dropdown.Toggle
-                id="dropdown-basic"
-                style={{ backgroundColor: "#171744", border: "#171744" }}
-              >
-                Image Gallery
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu className="drop-d">
-                <Dropdown.Item>
-                  <Link
-                    to="/AdminImageGallery"
-                    style={{ textDecoration: "none" }}
-                  >
-                    Create a photo
-                  </Link>{" "}
-                </Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </li>
-          <li style={{ display: "flex" }}>
             <GiBabyfootPlayers
               style={{
                 fontSize: "25px",
@@ -460,6 +407,71 @@ function ResponsiveDrawer(props) {
             </Dropdown>
           </li>
           <li style={{ display: "flex" }}>
+            <MdFollowTheSigns
+              style={{
+                fontSize: "25px",
+                marginTop: "auto",
+                marginBottom: "auto",
+              }}
+            />
+            <Dropdown>
+              <Dropdown.Toggle
+                id="dropdown-basic"
+                style={{ backgroundColor: "#171744", border: "#171744" }}
+              >
+                Officials
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className="drop-d">
+                <Dropdown.Item>
+                  {" "}
+                  <Link
+                    to="/createOfficials"
+                    style={{ textDecoration: "none" }}
+                  >
+                    Create an Official
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/getOfficials" style={{ textDecoration: "none" }}>
+                    Get Officials
+                  </Link>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </li>
+          <li style={{ display: "flex" }}>
+            <BsFillImageFill
+              style={{
+                fontSize: "25px",
+                marginTop: "auto",
+                marginBottom: "auto",
+              }}
+            />
+            <Dropdown>
+              <Dropdown.Toggle
+                id="dropdown-basic"
+                style={{ backgroundColor: "#171744", border: "#171744" }}
+              >
+                Image Gallery
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className="drop-d">
+                <Dropdown.Item>
+                  <Link
+                    to="/AdminImageGallery"
+                    style={{ textDecoration: "none" }}
+                  >
+                    Create a photo
+                  </Link>{" "}
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </li>
+
+          <li style={{ display: "flex" }}>
             <MdSupervisedUserCircle
               style={{
                 fontSize: "25px",
@@ -476,9 +488,18 @@ function ResponsiveDrawer(props) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="drop-d">
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                <Dropdown.Item href="#/action-1">
+                  {" "}
+                  <Link to="/createCoach" style={{ textDecoration: "none" }}>
+                    Create a Coach profile
+                  </Link>{" "}
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-2">
+                  {" "}
+                  <Link to="/getCoaches" style={{ textDecoration: "none" }}>
+                    Get Coaches
+                  </Link>
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </li>

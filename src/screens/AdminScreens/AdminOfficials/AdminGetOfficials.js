@@ -5,9 +5,8 @@ import { Col, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Loader from "../../../components/Loader";
 import AdminLayout from "../AdminLayout";
-import BasicExample from "../../../components/navbar/NavBar";
 
-const AdminGetPlayers = () => {
+const AdminGetOfficials = () => {
   const [users, setUsers] = useState([]);
   const [searchTitle, setSearchTitle] = useState("");
   const [loading, setLoading] = useState(true);
@@ -15,7 +14,7 @@ const AdminGetPlayers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       const { data } = await axios.get(
-        "https://nafasports.herokuapp.com/api/players"
+        "https://nafasports.herokuapp.com/api/officials"
       );
 
       setUsers(data);
@@ -39,7 +38,7 @@ const AdminGetPlayers = () => {
           <input
             className="dsp-input"
             type="text"
-            placeholder="Search Player By Name"
+            placeholder="Search Official By Name"
             onChange={(e) => setSearchTitle(e.target.value)}
           />
           <div className="chioma">
@@ -51,9 +50,7 @@ const AdminGetPlayers = () => {
                   if (searchTitle === "") {
                     return value;
                   } else if (
-                    value.surName
-                      .toLowerCase()
-                      .includes(searchTitle.toLowerCase())
+                    value.name.toLowerCase().includes(searchTitle.toLowerCase())
                   ) {
                     return value;
                   }
@@ -73,14 +70,14 @@ const AdminGetPlayers = () => {
                             <h6>
                               {" "}
                               <Link
-                                to={`/AdminplayerProfile/${usy._id}`}
+                                to={`/AdminofficialProfile/${usy._id}`}
                                 style={{
                                   textDecoration: "none",
                                   marginLeft: "10px",
                                   color: "black",
                                 }}
                               >
-                                {usy.surName} {usy.firstName}
+                                {usy.name}
                               </Link>
                             </h6>
                           </div>
@@ -97,4 +94,4 @@ const AdminGetPlayers = () => {
   );
 };
 
-export default AdminGetPlayers;
+export default AdminGetOfficials;

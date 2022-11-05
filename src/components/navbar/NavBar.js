@@ -141,8 +141,7 @@ function BasicExample() {
                     </Dropdown.Menu>
                   </Dropdown>
                 ) : (
-                  <Link
-                    to="/login"
+                  <Nav.Link
                     style={{
                       textDecoration: "none",
                       color: "whitesmoke",
@@ -151,8 +150,10 @@ function BasicExample() {
                       alignItem: "center",
                       textAlign: "cenetr",
                     }}
+                    className="n-linkz"
                   >
-                    <Nav.Link
+                    <Link
+                      to="/login"
                       style={{
                         textDecoration: "none",
                         color: "whitesmoke",
@@ -161,11 +162,11 @@ function BasicExample() {
                         alignItem: "center",
                         textAlign: "cenetr",
                       }}
-                      className="n-linkz"
                     >
+                      {" "}
                       Sign In
-                    </Nav.Link>
-                  </Link>
+                    </Link>
+                  </Nav.Link>
                 )}
               </Nav>
             </div>

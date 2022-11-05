@@ -38,7 +38,11 @@ const AdminCreateNewsCat = () => {
     };
 
     axios
-      .post("http://localhost:5000/api/posts/categories", data, headers)
+      .post(
+        "https://nafasports.herokuapp.com/api/posts/categories",
+        data,
+        headers
+      )
 
       .then((res) => {
         console.log(res.data);
@@ -89,6 +93,9 @@ const AdminCreateNewsCat = () => {
                           <p>Please create a news category here</p>
 
                           <div className="form-outline mb-4">
+                            <label className="form-label" for="form2Example11">
+                              News Category
+                            </label>
                             <input
                               type="text"
                               id="form2Example11"
@@ -97,9 +104,6 @@ const AdminCreateNewsCat = () => {
                               value={category}
                               onChange={(e) => setCategory(e.target.value)}
                             />
-                            <label className="form-label" for="form2Example11">
-                              News Category
-                            </label>
                           </div>
 
                           <div className="text-center pt-1 mb-5 pb-1">
