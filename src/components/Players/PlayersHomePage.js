@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import BasicExample from "../navbar/NavBar";
@@ -8,6 +8,12 @@ const PlayersHomePage = () => {
   return (
     <div>
       <BasicExample />
+      <h5
+        className="text-center "
+        style={{ color: "blue", fontWeight: "600", marginTop: "30px" }}
+      >
+        Nafa players category
+      </h5>
       <div
         style={{
           display: "flex",

@@ -371,13 +371,18 @@ function ResponsiveDrawer(props) {
                   </Link>{" "}
                 </Dropdown.Item>
                 <Dropdown.Item>
-                  <Link to="/getPlayers" style={{ textDecoration: "none" }}>
+                  <Link to="/draftPlayer" style={{ textDecoration: "none" }}>
                     Get Player Profile
                   </Link>
                 </Dropdown.Item>
-                <Dropdown.Item>
+                {/* <Dropdown.Item>
                   <Link to="/createPlayer" style={{ textDecoration: "none" }}>
                     Update Player Profile
+                  </Link>
+                </Dropdown.Item> */}
+                <Dropdown.Item>
+                  <Link to="/draftPlayer" style={{ textDecoration: "none" }}>
+                    Draf a Player
                   </Link>
                 </Dropdown.Item>
               </Dropdown.Menu>

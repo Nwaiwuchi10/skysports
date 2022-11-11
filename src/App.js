@@ -59,6 +59,13 @@ import AdminGetOfficials from "./screens/AdminScreens/AdminOfficials/AdminGetOff
 import AdminGetOfficialDetails from "./screens/AdminScreens/AdminOfficials/AdminGetOfficialDetails";
 import PlayersHomePage from "./components/Players/PlayersHomePage";
 import TeamPlayers from "./components/Players/TeamPlayers";
+import DraftPlayerScreen from "./screens/AdminScreens/AdminPlayer/DraftPlayerScreen";
+import DraftPlayer from "./screens/AdminScreens/AdminPlayer/DraftPlayer";
+import TeamPlayerDetails from "./components/Players/TeamPlayerDetails";
+import AdminPlayersDetails from "./screens/AdminScreens/AdminPlayer/AdminPlayersDetails";
+import Nssffl from "./LiveGames/Nssffl/Nssffl";
+import Academica from "./LiveGames/Academica/Academica";
+import NigeriaPremiership from "./LiveGames/NaijaPremiership/NigeriaPremiership";
 function App() {
   const Admin = localStorage.getItem("isAdmin") === "true";
   return (
@@ -90,10 +97,16 @@ function App() {
           element={Admin ? <PersistentDrawerLeft /> : <HomePage />}
         /> */}
         <Route path="/playerProfile/:id" element={<PlayersDetails />} />
+        <Route path="/teamplayerProfile/:id" element={<TeamPlayerDetails />} />
         <Route
           path="/AdminplayerProfile/:id"
           element={<AdminPlayerDetails />}
         />
+        <Route
+          path="/AdminPlayerProfile/:id"
+          element={<AdminPlayersDetails />}
+        />
+        <Route path="/playerDrafting/:id" element={<DraftPlayer />} />
         <Route
           path="/AdminofficialProfile/:id"
           element={<AdminGetOfficialDetails />}
@@ -140,6 +153,13 @@ function App() {
         <Route path="/admin/fixtures/:id/edit" element={<AdminUpdateMatch />} />
         <Route path="/AdminImageGallery" element={<AdminImageGallery />} />
         <Route path="/livegames" element={<LivesGames />} />
+        <Route path="/Nssffltournament" element={<Nssffl />} />
+        <Route path="/Academicatournament" element={<Academica />} />
+        <Route
+          path="/NigeriaPremiershiptournament"
+          element={<NigeriaPremiership />}
+        />
+        <Route path="/draftPlayer" element={<DraftPlayerScreen />} />
       </Routes>
     </div>
   );

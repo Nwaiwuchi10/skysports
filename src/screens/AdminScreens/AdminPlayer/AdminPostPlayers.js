@@ -17,6 +17,7 @@ const AdminPostPlayers = () => {
   const [playerID, setPlayerID] = useState("");
   const [surName, setSurName] = useState("");
   const [firstName, setFirstName] = useState("");
+  const [playerCategory, setPlayerCategory] = useState("Poll Player");
   const [otherNames, setOtherNames] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [stateOfOrigin, setStateOfOrigin] = useState("");
@@ -72,6 +73,7 @@ const AdminPostPlayers = () => {
       surName: surName,
       firstName: firstName,
       otherNames: otherNames,
+      playerCategory: playerCategory,
       status: status,
       dateOfBirth: dateOfBirth,
       stateOfOrigin: stateOfOrigin,
@@ -122,6 +124,7 @@ const AdminPostPlayers = () => {
           setEmail("");
           setHeight("");
           setWeight("");
+          setPlayerCategory("");
           setFouthyYardDash("");
           setPlayerID("");
           setOtherNames("");
@@ -142,7 +145,7 @@ const AdminPostPlayers = () => {
 
           console.log(res.data);
           toast.success("Post is sucessful");
-          navigate("/getPlayers");
+          navigate("/draftPlayer");
         } else {
           toast.error(res.data.error);
         }
